@@ -1,0 +1,25 @@
+value manuRyasaFjFAvAci = [
+"BArawa";
+"Barawa";
+"SabarI";
+"SakuntalA";
+"SawqGna";
+"balarAma";
+"lakRmaNa";
+"kEkayI";
+"maXusUxana";
+"nala";
+"nAraxa";
+"rAGava";
+"rAma";
+"sIwA";
+"saFjaya";
+"sampAwi";
+"sugrIva";
+"vAlmIki";
+"wArA";
+"xuryoXana";
+"xaSaraWa";
+"yuXiRTira";
+]
+;

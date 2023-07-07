@@ -141,7 +141,7 @@ tel_gen(){
     $ANU_MT_PATH/map/tel/add_dict_mng.pl $SCLINSTALLDIR $ANU_MT_PATH/../data te |\
     #$ANU_MT_PATH/map/tel/lwg_avy_avy.pl $SCLINSTALLDIR $ANU_MT_PATH/../data hi  |\
     $ANU_MT_PATH/map/tel/lwg_avy_avy.pl $SCLINSTALLDIR $ANU_MT_PATH/../data te |\
-    $ANU_MT_PATH/tel/sent_gen/agreement.pl $ANU_MT_PATH/../data $ANU_MT_PATH/tel/sent_gen < /tmp/1.txt |\
+    $ANU_MT_PATH/tel/sent_gen/agreement.pl $ANU_MT_PATH/../data $ANU_MT_PATH/tel/sent_gen |\
     ###$ANU_MT_PATH/tel/sent_gen/agreement.pl $SCLINSTALLDIR $ANU_MT_PATH/../data $ANU_MT_PATH/tel/sent_gen  |\
     $ANU_MT_PATH/tel/word_gen/call_gen.pl $SCLINSTALLDIR |\
     $ANU_MT_PATH/interface/modify_mo_for_display.pl $SCLINSTALLDIR  > $temp_files_path/ttt

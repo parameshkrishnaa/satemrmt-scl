@@ -63,11 +63,13 @@ set_tmp_path () {
 format () {
       $ANU_MT_PATH/Normalisation/lwg.out < $TMP_DIR_PATH/$FILE_NM |\
       $ANU_MT_PATH/format/gen_table.out > $temp_files_path/$fbn.out
+  cp $temp_files_path/$fbn.out $temp_files_path/$fbn.format.out
 }
 
 sandhi_splitter () {
       cp $temp_files_path/$fbn.out $temp_files_path/$fbn.out.orig
       $ANU_MT_PATH/sandhi_splitter/copy_field.pl  $temp_files_path/sandhied_$fbn < $temp_files_path/$fbn.out.orig > $temp_files_path/$fbn.out
+  cp $temp_files_path/$fbn.out $temp_files_path/$fbn.sandhi.out
 }
 
 morph () {

@@ -58,8 +58,8 @@ MT/prog/map/mar/
 MT/prog/mar/
 MT/data/mr/
 MT/prog/map/tel/
-MT/prog/tel/
-MT/data/te/
+#MT/prog/tel/
+#MT/data/te/
 NN/CG/nne2diagram.tab.h
 NN/parser/nneparse.tab.h
 NN/Type_identifier/typeidentifier.tab.h

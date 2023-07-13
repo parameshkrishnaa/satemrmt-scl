@@ -139,8 +139,12 @@ my($out);
 	else {
 		$wrd=$rt."_".$tam;
 	     }
+
+		if (($cat eq "avy" && $rt=~/^[\.,_\-]$/) ) {
+			$wrd=$rt;
+		}
 	
-	if ($flag == 1) { $wrd=$rt1."_".$wrd; $flag=0}
+	if ($flag == 1) { $wrd=$rt1."_".$wrd; $flag=0;}
 
       print TMP $wrd;
       close (TMP);

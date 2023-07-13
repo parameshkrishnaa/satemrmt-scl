@@ -315,14 +315,14 @@ while($tmpin = <STDIN>){
        $map_rt = $word;
        $map_rt =~ s/^\-//;
        if($map_rt eq ".") { 
-         $ans = "$map_rt avy NW NW NW NW";
+		   $ans = "$map_rt avy NW NW NW NW";
        } else {
          $cat = "n";
          $ans =  "$map_rt $cat $default_lifga $default_vacana $default_puruRa $default_tam";
        }
     }
   } # Do for each analysis
-     print $tmpin,"\t",$ans,"\n";
+  print $tmpin,"\t",$ans,"\n";
 } # End while
 
 close(TMP_N);

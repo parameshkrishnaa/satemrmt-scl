@@ -394,9 +394,9 @@ sub get_hn_purURa_sarvanAma{
 
  my($purURa) = "";
 
- if($rt eq "asmax") { $purURa = "u";}
- elsif($rt eq "yuRmax") { $purURa = "m";}
- else { $purURa = "a";}
+ if($rt eq "asmax") { $purURa = "1";}
+ elsif($rt eq "yuRmax") { $purURa = "2";}
+ else { $purURa = "3";}
 
 $purURa;
 }

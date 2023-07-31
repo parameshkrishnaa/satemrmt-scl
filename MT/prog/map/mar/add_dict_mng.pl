@@ -381,9 +381,9 @@ $lifga;
 sub get_hn_purURa{
  my($purURa) = @_;
 
- if($purURa eq "u") { $purURa = "u";}
- elsif($purURa eq "ma") { $purURa = "m";}
- elsif($purURa eq "pra") { $purURa = "a";}
+ if($purURa eq "u") { $purURa = "1";}
+ elsif($purURa eq "ma") { $purURa = "2";}
+ elsif($purURa eq "pra") { $purURa = "3";}
 
 $purURa;
 }
@@ -394,9 +394,9 @@ sub get_hn_purURa_sarvanAma{
 
  my($purURa) = "";
 
- if($rt eq "asmax") { $purURa = "u";}
- elsif($rt eq "yuRmax") { $purURa = "m";}
- else { $purURa = "a";}
+ if($rt eq "asmax") { $purURa = "1";}
+ elsif($rt eq "yuRmax") { $purURa = "2";}
+ else { $purURa = "3";}
 
 $purURa;
 }

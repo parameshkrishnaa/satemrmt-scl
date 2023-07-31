@@ -1,7 +1,7 @@
 wax,puM,awanu^awadu^vAdu
 anya,puM,anya^Binna^iwara
 anyA,swrI,anya^iwara
-asmax,a,memu
+asmax,a,nenu
 Bavaw,puM,mIru^wamaru
 BavawI,swrI,mIru^wamaru
 ewax,napuM,ixi

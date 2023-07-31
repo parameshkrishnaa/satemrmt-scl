@@ -59,7 +59,9 @@ my($j,$abhihita_lifgam,$abhihita_pos);
            $abhihita_lifgam = $1;
            $abhihita_vacanam = $2;
         }
-
+		#  open(TMP,">/tmp/123.in");
+		#   print TMP "##$abhihita_lifgam#$abhihita_vacanam##";
+		#close(TMP);
 	# Now the head is the noun closest to the verb. Hence we get the lifgam and vacanam. But if there is another noun 'samucciwa' with this noun, then the vacanam and lifgam should be changed as follows.
 	# vacanam will always be plural. (Since Hindi does not have xvi-vacana)
 	# lifgam will be swrI if all the sup-samucciwas are fem else masc.

@@ -154,6 +154,9 @@ mar_gen(){
   if [ $OUTSCRIPT = "Hindi" ]; then
     $ANU_MT_PATH/translation/translate.sh $SCLINSTALLDIR $my_converter_wxHindi < $temp_files_path/$fbn.out > $temp_files_path/../${fbn}_trnsltn
   fi
+  if [ $OUTSCRIPT = "DEV" ]; then
+    $ANU_MT_PATH/translation/translate.sh $SCLINSTALLDIR $my_converter_wxHindi < $temp_files_path/$fbn.out > $temp_files_path/../${fbn}_trnsltn
+  fi
   if [ $OUTSCRIPT = "WX" ]; then
     cut -f17 $temp_files_path/$fbn.out > $temp_files_path/../${fbn}_trnsltn
   fi

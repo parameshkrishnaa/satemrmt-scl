@@ -21,8 +21,6 @@
 $GraphvizDot = $ARGV[0];
 $path = $ARGV[1]; # path for temporary files
 
-$parse = 1;
-
 #These color codes are taken from Sanskrit_style.css (MT/web_interface/Sanskrit_style.css)
 
 $color{"N1"} = "#00BFFF";
@@ -42,42 +40,49 @@ $cluster_no = 0;
 $rel_str = "";
 $solnfound = 0;
 
+
+$wrd_fld_id = 1; # Counted starting from 0
+$rel_fld_id = 6; # Counted starting from 0
+$color_code_fld_id = 8; # Counted starting from 0
+
 $hdr = "digraph G\{\nrankdir=BT;\n compound=true;\n bgcolor=\"lemonchiffon1\";\n";
 $dir = "back";
 $parse = 1;
 
 $dotfl_nm = "$parse.dot"; 
+
 open TMP1, ">${path}/${dotfl_nm}" || die "Can't open ${path}/${dotfl_nm} for writing";
-#open TMP1, ">/Users/ambakulkarni/a.dot";
- print TMP1 $hdr;
+print TMP1 $hdr;
 
 @in = <STDIN>;
 
-	for ($i=1;$i<$#in;$i++) {  #The count starts with 1; since the 1st line that corresponds to the heading is to be ignored.
+	for ($i=1;$i<=$#in;$i++) {  #The count starts with 1; since the 1st line that corresponds to the heading is to be ignored.
           @flds = split(/\t/,$in[$i]);
          # if ($flds[0] =~ /^([0-9]+)[\.\।]([2-9])/) {
-         #    $label .= $flds[1];
-         # } else {$label = $flds[1];}
-         $label = $flds[1];
+         #    $label .= $flds[$wrd_fld_id];
+         # } else {$label = $flds[$wrd_fld_id];}
+         $label = $flds[$wrd_fld_id];
           $flds[0] =~ /^([0-9]+)[\.\।]/;
           $word{$flds[0]} = $label."(".$flds[0].")";
-          $tmp = $flds[8];
+          $tmp = $flds[$color_code_fld_id];
           $tmp =~ s/@//;
           $wcolor{$flds[0]} = $color{$tmp}; 
          
-         #if ($flds[1] !~ /-$/) {  #If not compound pUrvapaxa, write the node
-             @rels = split(/;/,$flds[6]);
+         #if ($flds[$wrd_fld_id] !~ /-$/) {  #If not compound pUrvapaxa, write the node
+             @rels = split(/;/,$flds[$rel_fld_id]);
              for ($z=0;$z<=$#rels;$z++) {
              if($rels[$z] =~ /([^,]+),([0-9\.\।]+)/) {
                 $rel_nm = $1;
                 $d_id = $2;
                 $s_id = $flds[0];
-                #$s_id =~ s/^([0-9]+).*/$1/; # Remove the component id
-                #$d_id =~ s/^([0-9]+).*/$1/; # Remove the component id
                 $is_cluster = 0;
                 if (&niwya_relations($rel_nm)){ # niwya sambanXaH or niwya_sambanXaH1
                       $style = "dashed color=\"red\"";
-                      $rank .= "{rank = same; Node$s_id; Node$d_id;}\n"; 
+			$n1 = "Node".$s_id;
+			$n2 = "Node".$d_id;
+			$n1 =~ s/\./_/g;
+			$n2 =~ s/\./_/g;
+                      $rank .= "{rank = same; $n1; $n2;}\n"; 
                       $dir = "both";
                 } elsif ($z > 0) {
                       $style = "dotted"; 
@@ -121,8 +126,8 @@ open TMP1, ">${path}/${dotfl_nm}" || die "Can't open ${path}/${dotfl_nm} for wri
              if($style ne "") { $s_str = "style=$style";} else {$s_str = "";}
 
              if (($rel_nm !~ /abhihita/) && ($rel_nm !~ /अभिहित/)){
-                $s_id =~ s/\./_/;
-                $d_id =~ s/\./_/;
+                $s_id =~ s/\./_/g;
+                $d_id =~ s/\./_/g;
 	        $rel_str .= "\nNode$s_id -> Node$d_id \[ $s_str label=\"".$rel_nm."\"  dir=\"$dir\" \]";
              }
             }
@@ -170,22 +175,22 @@ my($i,@rel_str,$node,$nodes,@nodes,$node_id,$indx_id,$z,$r,$from,$to);
     for ($z=1;$z<=$tot_words;$z++){
             @flds = split(/\t/,$in[$z]);
             #if ($flds[0] =~ /^([0-9]+)[\.\।]([2-9])/) {
-            # $label .=  $flds[1];
-            #} else {$label = $flds[1];}
-            $label = $flds[1];
+            # $label .=  $flds[$wrd_fld_id];
+            #} else {$label = $flds[$wrd_fld_id];}
+            $label = $flds[$wrd_fld_id];
             $flds[0] =~ /^([0-9]+)[\.\।]/;
             $word{$flds[0]} = $label."(".$flds[0].")";
-            $tmp = $flds[8];
+            $tmp = $flds[$color_code_fld_id];
             $tmp =~ s/@//;
             $wcolor{$flds[0]} = $color{$tmp}; 
-            if (($flds[1] =~ /^-/) && ($word_found{$flds[0]} != 1)){
+            if (($flds[$wrd_fld_id] =~ /^-/) && ($word_found{$flds[0]} != 1)){
                  &print_node_info($z,$word{$flds[0]},$wcolor{$flds[0]});
             }
     }
          @rel_str = split(/\n/,$rel_str);
          $rel_str = "";
          foreach $r (@rel_str) {
-	      $r =~ /Node([0-9]+) \-> Node([0-9]+).*label="[^"]+"/;
+	      $r =~ /Node([0-9_]+) \-> Node([0-9_]+).*label="[^"]+"/;
               $from = $1;
               $to = $2;
               for($z=0;$z<=$cluster_no;$z++){
@@ -221,7 +226,7 @@ sub print_all_nodes_info{
 
 sub print_node_info{
     my($node,$word,$color) = @_;
-    $node =~ s/\./_/;
+    $node =~ s/\./_/g;
     print TMP1 "Node$node [style=filled, color=\"$color\" ";
     if($color eq "#FFAEB9") { print TMP1 "shape=rectangle ";}
     print TMP1 "label = \"$word\"]\n";
@@ -248,12 +253,14 @@ sub cluster_relations{
   if(   ($rel =~ /समुच्चित/) 
      || ($rel =~ /अन्यतरः/)
      || (   ($rel =~ /विशेषणम्/) 
-          && ($rel !~ /क्रियाविशे/) )
+          && ($rel !~ /क्रियाविशे/) 
+          && ($rel !~ /विधेय/))
      || ($rel =~ /samuccitaḥ/) 
      || ($rel =~ /anyataraḥ/)
-     || ($rel =~ /anyatara\.h/) 
+     || ($rel =~ /anyatara.h/) 
      || (   ($rel =~ /viśeṣaṇam/) 
-          && ($rel !~ /kriyāvi/))) { 
+          && ($rel !~ /kriyāvi/)
+          && ($rel !~ /vidheya/))) { 
     return 1;
   } else { return 0;}
 }

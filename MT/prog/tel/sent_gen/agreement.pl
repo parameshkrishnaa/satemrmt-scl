@@ -199,8 +199,8 @@ foreach $w_ana (@wrd_ana){
   if($DEBUG) {&print_array("STDERR","handle_hindi_idio_karma_ko",$wrd_fld,$morph_kaaraka_anal,$ana_fld_for_calling_gen_after_lwg);}
 
   ###BG sloka 1.4 telugu verb_noun_agr
-  #&copy_abhihita_gen_num_to_verb();
-  #if($DEBUG) {&print_array("STDERR","noun_verb_agr",$wrd_fld,$morph_kaaraka_anal,$ana_fld_for_calling_gen_after_lwg);}
+  &copy_abhihita_gen_num_to_verb();
+  if($DEBUG) {&print_array("STDERR","noun_verb_agr",$wrd_fld,$morph_kaaraka_anal,$ana_fld_for_calling_gen_after_lwg);}
 
   &handle_kriyAmUla_verb_agr();
   #if($DEBUG) {&print_array("STDERR","kriyAmUla_verb_agr",$wrd_fld,$morph_kaaraka_anal,$ana_fld_for_calling_gen_after_lwg);}

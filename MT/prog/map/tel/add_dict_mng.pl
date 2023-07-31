@@ -381,9 +381,9 @@ $lifga;
 sub get_hn_purURa{
  my($purURa) = @_;
 
- if($purURa eq "u") { $purURa = "u";}
- elsif($purURa eq "ma") { $purURa = "m";}
- elsif($purURa eq "pra") { $purURa = "a";}
+ if($purURa eq "u") { $purURa = "1";}
+ elsif($purURa eq "ma") { $purURa = "2";}
+ elsif($purURa eq "pra") { $purURa = "3";}
 
 $purURa;
 }

@@ -66,7 +66,6 @@ my($in,$show,$not) = @_;
 my($out);
       $in =~ s/\/$//;
       ($rt,$cat,$gen,$num,$per,$tam) = split(/ /,$in);
-      # print "$rt $cat $gen $num $per $tam";
       if($rt =~ /^(.*-)([^\-]+)$/) { $pUrva = $1; $rt = $2;} else {$pUrva = "";}
       ($rt,$tam) = split(/:/,&handle_hE($rt,$tam));
       ($rt,$cat) = split(/:/,&handle_Bavaw($rt,$cat));
@@ -101,7 +100,7 @@ my($out);
 			#$gen=~ s/m/pu/;
 			#$tam=~ s/tunn/wunn/;
 			if($gen=~/^m$|^f$|^n$/) {
-				$per = "3";
+						$per = "3";
 			}
 			#if(($per=~/s/)&&($gen=~/pu/)){
 			#$wrd="^".$rt."<cat:".$cat."><gnp:23\_".$num."><tam:".$tam.">\$"; 
@@ -111,8 +110,8 @@ my($out);
 			#}
 			#else{
 				#$wrd="^".$rt."<cat:".$cat."><gnp:3\_".$gen."\_".$num."><tam:".$tam.">\$"; }
-			$wrd="^".$rt."<lcat:".$cat."><gen:".$gen."><num:".$num."><per:".$per."><tam:".$tam."><suffix:".$tam.">\$"; }
-		#}
+			$wrd="^".$rt."<lcat:".$cat."><gen:".$gen."><num:".$num."><per:".$per."><tam:".$tam."><suffix:".$tam.">\$"; 
+		}
 	elsif (($cat eq "n") || ($cat eq "P")) {
       		#^sIwani/sIwa<cat:n><num:eka><parsarg:ni>$
 		$cat=~s/^n$/noun/g;
@@ -151,7 +150,7 @@ my($out);
 	  #system("/usr/bin/lt-proc -c -g  $SCLINSTALLDIR/MT/prog/tel/word_gen/telugu-apertium.mogen < /tmp/tel_in > /tmp/tel_out");
 	  #system("/usr/bin/lt-proc -c -g  $SCLINSTALLDIR/MT/prog/tel/word_gen/tel_apertium_v1.1.mogen < /tmp/tel_in > /tmp/tel_out");
 	  #updated new generator 17/04/2023
-		  system("/usr/bin/lt-proc -c -g  $SCLINSTALLDIR/MT/prog/tel/word_gen/tel_apertium_v2.1.mogen < /tmp/tel_in > /tmp/tel_out");
+		  system("/usr/bin/lt-proc -c -g  $SCLINSTALLDIR/MT/prog/tel/word_gen/tel_apertium_v2.5.mogen < /tmp/tel_in > /tmp/tel_out");
 		  open(TELGEN,"</tmp/tel_out");
 		  $out=<TELGEN>;
 		  $out=~s/\/.*//;

@@ -93,9 +93,20 @@ my($out);
 		if (($gen eq "f")&&($num eq "sg")){
 		$gen = "fn";
 		}
+		if (($gen eq "n")&&($num eq "sg")){
+		$gen = "fn";
+		}
 		if (($gen eq "m")&&($num eq "pl")){
 		$gen = "mf";
 		}
+		if (($gen eq "f")&&($num eq "pl")){
+		$gen = "mf";
+		}
+		#ke gacCawaH .
+		if($tam eq "wU" && $gen=~/m|f|n/) {
+			$tam ="wunn";
+		}
+
 		#veVlYlu<cat:v><gnp:3_pu_e><tam:wunn>
 			#$gen=~ s/m/pu/;
 			#$tam=~ s/tunn/wunn/;
@@ -126,6 +137,23 @@ my($out);
 		}
 		if (($rt eq "awanu")&&($num eq "pl")){
 		$rt="vAlYlu"; $cat="pronoun"; $gen="mf"; $per="3";
+		}
+		if (($rt eq "iwanu")&&($num eq "pl")){
+		$rt="vIlYlu"; $cat="pronoun"; $gen="mf"; $per="3";
+		}
+		#AmeV P f p 3 0 wAH gacCanwi .
+		if (($rt eq "AmeV")&&($num eq "pl")){
+			$rt="vAlYlu";
+		}
+		if (($rt eq "ImeV")&&($num eq "pl")){
+			$rt="vIlYlu";
+		}
+		#wAni gacCanwi .
+		if (($rt eq "axi")&&($num eq "pl")){
+			$rt="avi";
+		}
+		if (($rt eq "ixi")&&($num eq "pl")){
+			$rt="ivi";
 		}
 
 		#$tam=~ s/2/ni/;

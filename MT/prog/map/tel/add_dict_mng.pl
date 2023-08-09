@@ -343,7 +343,7 @@ sub get_hn_lifga{
  my($wrd,$lifga) = @_;
 
  if($FEM{$wrd}) { $lifga = "f";}
- elsif($lifga eq "napuM") { $lifga = "m";}
+ elsif($lifga eq "napuM") { $lifga = "n";}
  elsif($lifga eq "puM") { $lifga = "m";}
  elsif($lifga eq "swrI") { $lifga = "f";}
  elsif($lifga eq "a") { $lifga = "m";}
@@ -356,7 +356,7 @@ $lifga;
 sub get_skt_hn_lifga{
  my($lifga) = @_;
 
- if($lifga eq "napuM") { $lifga = "m";}
+ if($lifga eq "napuM") { $lifga = "n";}
  elsif($lifga eq "puM") { $lifga = "m";}
  elsif($lifga eq "swrI") { $lifga = "f";}
  elsif($lifga eq "a") { $lifga = "m";}
@@ -369,7 +369,7 @@ $lifga;
 sub get_hn_P_lifga{
  my($wrd,$lifga) = @_;
 
- if($lifga eq "napuM") { $lifga = "m";}
+ if($lifga eq "napuM") { $lifga = "n";}
  elsif($lifga eq "puM") { $lifga = "m";}
  elsif($lifga eq "swrI") { $lifga = "f";}
  elsif($lifga eq "a") { $lifga = "m";}

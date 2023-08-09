@@ -16,7 +16,7 @@ kiFcana,napuM,koVMceVM
 ixam,puM,iwanu^iwadu
 ixam,swrI,ImeV^Ivida
 kawi,a,eVnni
-kim,napuM,eVvaru
+kim,napuM,evi
 kim_1,napuM,emiti
 kim,puM,eVvaru
 kim,swrI,eVvaru

@@ -140,6 +140,9 @@ my($out);
 		$gen=~s/^m$|^n$|^f$/any/g; #for time being gender is considered any for vanaM
 		$per=~s/a/any/g;
 		
+		if (($rt=~/^axi$|^ixi$|^exi/)){
+			$gen = "fn";
+		}
 		#since "vAdu" and "vAlYlu" are different pdgm, this mapping is done Apr 21_2023, Param
 		if (($rt eq "vAdu")&&($cat eq "noun")){
 		$cat="pronoun"; $gen="m"; $per="3";

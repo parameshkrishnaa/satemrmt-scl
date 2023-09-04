@@ -44,6 +44,7 @@ AhAra,puM,AhAraM^BojanaM^apaharaNaM,napuM
 AhArapaxArXaH,napuM,AhArapaxArXAlu,napuM
 AhAva,puM,nItiwoVtti,napuM
 Ahava,puM,yuxXaM^yajFaM,napuM
+Ahawa,puM,swrI,napuM,muxwiMpabadina^guNiMpabadina,napuM
 AhlAxa,puM,saMwoRamu,napuM
 Ahnika,napuM,xEnikamu^pagati,napuM
 AhvAna,napuM,pilupu^savAlu,napuM
@@ -1199,6 +1200,8 @@ aBimAna,puM,XanAxulaceV_kaligeVdu_garvamu^ajFAnamu^premamu^vaXamu,napuM
 aBimAna,puM,aBimAnaM^prema,napuM
 aBimanyu,puM,aBimanyudu,puM
 aBimarSa,napuM,nimaruta,napuM
+aBimawa,napuM,aBiprAyamu^uxxeSamu^AxariMcabaddavAdu,napuM,napuM,puM
+aBimawa,puM,aBiprAyamu^uxxeSamu^AxariMcabaddavAdu,napuM,napuM,puM
 aBimuKI,swrI,eVxuru,napuM
 aBimuKa,napuM,aBimuKaM^exuruga,napuM
 aBimuKa,napuM,eVxuru,napuM
@@ -1262,6 +1265,7 @@ aGa,napuM,pApaM^aparAXaM,napuM
 aGa,napuM,pApamu^vyasanamu^xuHKamu,napuM
 aGa,puM,pApaM^aparAXaM,napuM
 aGa,puM,pApamu^vyasanamu^xuHKamu,napuM
+aKaMda, aKila,vi,samaswamEna,napuM
 aKaNdA,swrI,aKaMdamu^samaswamu^niMdinaxi,napuM
 aKila,napuM,aKilamu^aMwayu^sarvamu^yAvawwu,napuM
 aKila,napuM,samagraM^aMwayu^saMpUrNaM,napuM
@@ -1355,6 +1359,7 @@ aXara,napuM,aXaramu^peVxavi,napuM
 aXara,puM,aXaramu^peVxavi,napuM
 aXara,puM,peVxavi,napuM
 aXarma,puM,aXarmaM,napuM
+aXarma,puM,aXarma^Xarmamu_kAnixi^Xarmamu_wappinavAdu,napuM,napuM,puM
 aXiBUwa,napuM,parabrahma^brahmaM,napuM
 aXiRTAna,napuM,AkramiMcuta^sWiramuga_uMduta,napuM
 aXiRTAna,napuM,aXiRTAnamu^AkramiMcuta^baMdi_kannu^praBAvamu^oVkAnoVka_pattaNamu,napuM
@@ -1429,12 +1434,14 @@ acira,napuM,aciramu^samIpakAlamunaMxu^koVxxi_samayamuMdunaxi,napuM
 acyuwa,puM,sWiramEnaxi,napuM
 acyuwa,puM,viRNuvu,puM
 afGas,napuM,pApamu^aparAXamu,napuM
+afgAra,napuM,boVggu^aMgArakudu,napuM,puM
 afgIkqwa,puM,aMgIkqwamu^aMgIkariMpabaddaxi^svIkariMpabaddaxi,napuM
 afga,napuM,aMgaM,napuM
 afga,napuM,avayavamu^xehamu^upAyamu,napuM
 afga,puM,aMgaM,napuM
 afga,puM,avayavamu^xehamu^upAyamu^oVkAnoVka_xeSamu^Beri,napuM
 afgarAja,puM,yuvarAju^karNudu^sUwapuwwrakudu,puM
+afgaxa,puM,kadiyamu^Barawapuwrudu,napuM,puM
 afguRTa,napuM,boVtanavelu,napuM
 afguRTa,puM,boVtanavelu,napuM
 afgulIyaka,napuM,aMgulIyakamu^uMgaramu,napuM
@@ -1497,12 +1504,15 @@ ajFAna,napuM,ajFAnaM,napuM
 ajFAna,napuM,ajfAnamu^weVlivileni,napuM
 ajFAwa,napuM,weVliyanixi,napuM
 ajFAwa,puM,weVliyanixi,napuM
+ajFAwavAsa,napuM,ajfAwa_vAsamu^nivAsamu_weVliyanivAdu,napuM,puM
+ajFAwavAsa,puM,ajfAwa_vAsamu^nivAsamu_weVliyanivAdu,napum,puM
 ajFa,puM,mUrKudu^ajFAni,puM
 ajFa,puM,mUrKudu^eVruka_lenivAdu,puM
 ajIrNa,napuM,ajIrNamu,napuM
 ajIrNi,swrI,ajIrNamu,napuM
 aja,puM,janmiMcanixi,napuM
 aja,puM,meka,napuM
+aja,puM,mekapowu^brahmA^viRnuvu^Sivudu,napuM,puM,puM,puM
 ajaganXA,swrI,vAyiMta_vqkRamu,napuM
 ajagara,puM,Sivuni_villu,napuM
 ajagara,puM,peVxxapAmu,napuM
@@ -1510,6 +1520,7 @@ ajasram,napuM,eVllappudu^niwyaM,napuM
 ajasram,puM,eVllappudu^niwyaM,napuM
 ajaya,napuM,parAjayaM^ajayaM,napuM
 ajaya,puM,parAjayaM^ajayaM,napuM
+ajeya,puM,ajeyudu^ajeyamEna^jayiMcakUdani,puM,napuM,napuM
 ajina,napuM,carmaM,napuM
 ajina,puM,carmaM,napuM
 akAlA,swrI,akAlamu^sarikAni_kAlamu,napuM
@@ -1588,6 +1599,7 @@ amanxa,puM,maMxabuxXi_kAnivAdu^curukEnavAdu,puM
 amarRa,puM,asahanaSIlaM^kopaM,napuM
 amara,puM,maraNaM_lenivAdu,puM
 ambA,swrI,walli^amma,swrI
+ambarIRa,puM,sUryudu^yuxXamu^Sivudu,puM,napuM,puM
 ambara,napuM,AkASamu^vaswramu^vyasanamu^sugaMXaxravyamu,napuM
 ambara,napuM,ambaraM^AkASaM,napuM
 ambara,puM,AkASamu^vaswramu^vyasanamu^sugaMXaxravyamu,napuM
@@ -1608,11 +1620,13 @@ amoGa,puM,vyarWamu_kAnixi,napuM
 amqwA,swrI,amqwaM^suXa,napuM
 amqwa,napuM,amqwaM^suXa,napuM
 amqwa,puM,amqwaM^suXa,napuM
+anAWA,swrI,Barwaleni_swrI^xikkulenivAdu,swrI,puM
 anAgas,napuM,niraparAXi^aparAXamu_lenivAdu,puM
 anAgas,puM,niraparAXi^aparAXamu_lenivAdu,puM
 anAgasI,swrI,niraparAXi^aparAXamu_leni_swrI,swrI
 anAgawA,swrI,rAnixi^BaviRyawwu^weVliyanixi,napuM
 anAgawa,napuM,rAbovu^weVliyanixi,napuM
+anAgawavawI,swrI,rAni_swrI^weVliyanixi,swrI,napuM
 anAgawaviXAwq,puM,rAboye_kAlamunakE_sekariMci_uMcukonedivAdu,puM
 anAhAra,puM,AhAramu_winakapovuta^upavAsamu^vrawamu,napuM
 anAhUwa,napuM,piluvabadanixi,napuM
@@ -1658,8 +1672,11 @@ anaXikArin,puM,anaXikAri^aXikAraM_lenivAdu,puM
 anaduh,puM,eVxxu,napuM
 anahafkArA,swrI,poVgarulemi^garvamu^lekuMduta^sAXuwvamu,napuM
 anala,puM,agni^jaTarAgni,napuM
+anala,puM,agni^jaTarAgni^agnixevudu,napuM,napuM,puM
 ananwA,swrI,anaMwaM,napuM
+ananwA,swrI,anaMwamu^BUmi^pArvawi^aMwamu_lenixi,napuM,napuM,swrI,napuM
 ananwa,puM,anaMwaM,napuM
+ananwa,puM,anaMwamu^viRNuvu^AxiSeRudu^Sivudu^aMwamu_lenixi,napuM,puM,puM,puM,napuM
 ananwapAra,napuM,aMwamu_lenixi,napuM
 ananwarA,swrI,vyavaXi_lenixi^maXya_cotu_lenixi,napuM
 ananwara,napuM,anaMwaraM,napuM
@@ -1667,12 +1684,16 @@ ananwara,napuM,anaMwaramu^vyavaXi_lenixi^avakASamu_lenixi,napuM
 ananwavijaya,puM,anaMwavijayamu^XarmarAju_yoVkka_SaMKamu,napuM
 ananya,napuM,ananya^samarUpaM^aBinnaM,napuM
 ananya,puM,ananya^samarUpaM^aBinnaM,napuM
+ananyagawika,puM,vere_gawi^ASrayaM_lenivAdu,napuM,puM
 ananyagawikawA,swrI,vere_gawi_lenixi,napuM
+anapawyA,swrI,saMwawi_lemi^saMwAnamu_lenivAdu,napuM,puM
 anarWA,swrI,arWaM_lenaxi^prayojanamu_lenixi,napuM
 anarWa,puM,anarWamu^arWaM_lenaxi^prayojanamu_lenixi,napuM
 anarXaka,vi,arXamuleni^prayojanaM_leni,napuM
 anargalYa,vi,AtaMkamu_leni,napuM
 anas,napuM,baMdi,napuM
+anasUyA,swrI,asUya_lenixi^awri_BArya,napuM,swrI
+anavasara,puM,avasaramu_lenivAdu^akAlamu,puM,napuM
 anavaxya,vi,ceVppaxagina^maccaleni,napuM
 anekA,swrI,anekaM,napuM
 aneka,napuM,anekaM,napuM
@@ -2019,6 +2040,7 @@ arAga,napuM,rAga_rahiwa,napuM
 arAga,puM,rAga_rahiwa,napuM
 arAwi,puM,Sawruvu,puM
 arBak ,puM,pillavAdu,puM
+arBaka,puM,bAludu^kqSudu^mUrKudu^wakkuva,puM,puM,puM,napuM
 arGya,napuM,pUjakoVraku_jalamu,napuM
 arGya,puM,pUjakoVraku_jalamu,napuM
 arGya,swrI,pUjaku_waginavAdu^yogyudu,puM
@@ -2063,6 +2085,7 @@ arXokwa,puM,sagamu_ceVpputa,napuM
 arXokwi,swrI,sagamu_ceVppabadinaxi,napuM
 ara,puM,cakramu^cuvva,napuM
 ara,puM,vegaM^vadigala^SIGraMgA,napuM
+araNyAnI,swrI,xattamEna_adavi^araNya_xevawa,napuM,swrI
 araNya,napuM,adavi,napuM
 araNya,napuM,araNyaM^adavi^kAnanamu,napuM
 araNya,puM,araNyaM^adavi^kAnanamu,napuM
@@ -2080,8 +2103,11 @@ arhA,swrI,pUja^pUjanIya,napuM
 arha,napuM,arhawa,napuM
 arha,napuM,waginavAdu,puM
 arha,puM,arhawa,napuM
+arha,puM,pUjiMpaxaginaxi^iMxrudu^yogyudu^ISvarudu,napuM,puM,puM,puM
 arha,puM,waginavAdu,puM
+arhaw,puM,yogyudu^buxXudu^jinudu^pUjanIya,puM,puM,puM,napuM
 ari,puM,Sawruvu,puM
+ari,puM,Sawruvu^cakramu^suxarSanamu,puM,napuM,napuM
 ariRtA,swrI,naSiMpani^aSuBamu,napuM
 ariRta,napuM,sUwikAgqhamu^aSuBamu,napuM
 ariRta,puM,kuMkudu,puM
@@ -2091,7 +2117,9 @@ arisUxana,puM,arisUxanudu^Sawqvulanu_nASamu_ceyuvAdu,puM
 arjana,napuM,saMpAxana^prApwi^XanasaMgrahamu,napuM
 arjunA,swrI,weVllanixi^baMgAru,napuM
 arjuna,puM,arjunudu,puM
+arjuna,puM,weVllanixi^baMgAru^arjunudu,napuM,napuM,puM
 arka,puM,sUrya_kAMwi,napuM
+arka,puM,sUryudu^anna^rAgi,puM,napuM,napuM
 arocaka,puM,ruciMcanixi^Akalilemi^aiRtaM,napuM
 arocaka,swrI,ruciMcanixi^Akalilemi^aiRtaM,napuM
 arogA,swrI,arogyaM,napuM
@@ -2102,6 +2130,7 @@ arpiwa,puM,arpiMpabadinaxi,napuM
 aruNa,puM,sUryudu^eVrupu^anUrudu,napuM
 aruRa,puM,eVrupu,napuM
 aruci,swrI,rucilemi^evagiMpu,napuM
+arunXawI,swrI,aruMXawi^vaSiRTuniBArya^oVkAnoVka_nakRawramu^xakRuni_kUwuru,swrI,swrI,napuM,swrI
 arvan,puM,gurramu,napuM
 aryaman,puM,sUryudu^piwqxevawa,puM
 asUyA,swrI,asUyA^IrRyA^mawsaraM,napuM
@@ -2176,6 +2205,7 @@ awanxriwa,puM,jAgrawa_kalavAdu,puM
 awapaska,puM,wapassu_vismariMcuvAdu,puM
 awiSI,swrI,awiSayiMcu,napuM
 awiSaya,puM,aXikamu,napuM
+awiWi,puM,awiWi^viMxu,puM,napuM
 awiWin,napuM,awiWi,puM
 awiWin,puM,awiWi,puM
 awiWisawkAra,puM,awiWiseva,napuM
@@ -2191,6 +2221,7 @@ awinIca,napuM,awinIcaM,napuM
 awinIca,puM,awinIcaM,napuM
 awiprasafga,puM,aXika_prasaMgamu^wagani_pani^aXika_mAtalu,napuM
 awiraMhas,napuM,awivegamu,napuM
+awiraMhas,puM,awivegamu^awivegamu_galavAdu,napuM,puM
 awirakwa,puM,mikkili_eVrrani,napuM
 awirikwa,napuM,aXikamu,napuM
 awirikwa,puM,aXikamu,napuM
@@ -2212,6 +2243,7 @@ awrinewraprasUwa,puM,awri_newramunuMdi_puttinavAdu,puM
 awripraBava,puM,awrinuMdi_uwpannamEnaxi,napuM
 awrixqgja,puM,awri_cUpunuMdi_puttinavAdu,puM
 awwq,puM,winuvAdu,puM
+awyASrama,puM,sannyAsASramamu^ASramaXarmAlanu_awikramiMcuvAdu,napuM,puM
 awyAcAra,napuM,awyAcAramu^anuciwa_karma^sarigAni_pani,napuM
 awyAcAra,puM,awyAcAramu^anuciwa_karma^sarigAni_pani,napuM
 awyAhiwa,napuM,mikkili_Bayamu^prANasaMkatamu,napuM
@@ -2279,10 +2311,13 @@ axqSya,napuM,axqSyamu^kanipiMcanixi,napuM
 axqSya,puM,axqSyamu^kanipiMcanixi,napuM
 axqSyawA,swrI,axqSyawa^kanabadakapovuta,napuM
 axri,puM,parvawamu,napuM
+axviwIyA,swrI,axviwIyamu^samAnamu_lenixi,napuM,swrI
 axviwIya,napuM,axviwIyamu^samAnamu_lenixi,napuM
+axviwIya,puM,axviwIyamu^samAnamu_lenivAdu,napuM,puM
 axyawva,napuM,ipudu^I_roju^I_kAlaMlo,napuM
 aya,puM,axqRtamu,napuM
 aya,puM,gamanamu^BAgyamu,napuM
+ayaSas,napuM,kIrwi_lenivAdu^apakIrwi^niMxa,puM,napuM,napuM
 ayajFa,puM,yajFamu_kAnixi,napuM
 ayana,napuM,ayanaM^gamanaM^mArgaM,napuM
 ayana,napuM,gamanamu^mArgamu^gqhamu,napuM
@@ -2541,6 +2576,7 @@ ciwrA,napuM,axBuwamu^boVmma,napuM
 ciwra,vi,palu_raMgulu_kala,napuM
 ciwraBAnu,puM,sUryudu^agni,napuM
 ciwraka,puM,ciruwapuli,napuM
+ciwrakara,ciwrakAra,puM,ciwrakArudu,puM
 ciwrapawaMga,puM,sIwAkokaciluka,napuM
 ciwraraWa,puM,sUryudu,puM
 ciwwa,napuM,ciwwaM,napuM
@@ -3563,6 +3599,7 @@ loXra,puM,oVkAnoVkaceVttu,napuM
 locana,napuM,kannu^cUcuta,napuM
 lodana,napuM,kaliyapeVttuta^waracuta,napuM
 loha,puM,inumurAgi_munnagunavi,napuM
+loha,puM,napuM,inumu,napuM
 lohakAnwa,puM,ayiskAMwamu,napuM
 lohakAra,puM,inupapanivAdu,puM
 lohiwASva,puM,agni,napuM
@@ -3681,6 +3718,7 @@ mURaka,puM,mURaka^eVluka,napuM
 mURika,puM,mURaka^eVluka,napuM
 mUka,puM,mUgavAdu,puM
 mUla,napuM,mUlaM^moVxalu^kAraNaM,napuM
+mUlaka,puM,napuM,mullaMgi,napuM
 mUlya,napuM,veVla,napuM
 mUrCA,swrI,kalYlu_wirigi_padipovataM,napuM
 mUrCanA,swrI,kalYlu_wirigi_padipovataM,napuM
@@ -3849,9 +3887,11 @@ mafgalagraha,puM,SuBagrahaM,napuM
 mafgalakAraka,napuM,SuBakArakamu^maMgalYakArakamu,napuM
 mafgalakAraka,puM,SuBakArakamu^maMgalYakArakamu,napuM
 mafgalakArin,napuM,SuBaMkaligiMcu^maMgalYakAriNi,napuM
+mafgalakArin,puM,SuBaMceyuvAdu^maMgalYakAriNi,puM,napuM
 mafgalakArya,napuM,SuBakAryamu^maMgalYakAryamu,napuM
 mafgalakROma,napuM,pattu_vaswramu^nAracIra^SuBakAryamulaMxu_XariMcu_vaswraM,napuM
 mafgalakaraNa,napuM,SuBapraxaM^maMgalYakaraNa,napuM
+mafgalamAwraBURaNa,napuM,mafgalamAwraBURaNa^pasupu_mawrame_BURaNamugA_kalaxi,puM,swrI
 mafgalamAwraBURaNa,puM,pasupu_mawrame_BURaNamugA_kalavAdu,puM
 mafgalapATaka,puM,SreyoBilARi,puM
 mafgalapAwra,napuM,SuBapAwra,napuM
@@ -4721,6 +4761,7 @@ piwAmaha,puM,waMdri_yoVkka_waMdri,puM
 piwq,puM,piwq^waMdri,puM
 piwqRvasq,swrI,menawwa,swrI
 piwqvya,puM,waMdri_soxarudu,puM
+piwrya,puM,napuM,waMdri_saMbaMXamEna^paMcayajFamulalo_oVkati,napuM
 piwwa,napuM,pEwyamu,napuM
 plakRa,puM,juvvi,napuM
 plakRa,puM,juvvi_ceVttu,napuM
@@ -6544,6 +6585,7 @@ vasuMXarA,swrI,BUmi,napuM
 vasuXA,swrI,BUmi,napuM
 vasuxA,swrI,BUmi,napuM
 vaswra,napuM,gudda,napuM
+vaswrormi,puM,swrI,kucceVlYlYu,napuM
 vaswu,napuM,vaswuvu^sawyamu^viRayaM,napuM
 vata,puM,marri,napuM
 vata,puM,marriceVttu^SUnyamu^baMwi,napuM
@@ -7214,6 +7256,7 @@ xIpwa,puM,prakASiMpabadunaxi,napuM
 xIpwi,napuM,prakAsiMcunaxi,napuM
 xIpwi,puM,prakAsiMcunaxi,napuM
 xIpwi,swrI,kAMwi,napuM
+xIrGa,puM,napuM,poVdavEna,napuM
 xIrGasUwra,puM,vicAriMci_meVllagA_ceyuvAdu,puM
 xIrGasUwrin,puM,somari,puM
 xIrGasUwrin,puM,vicAriMci_meVllagA_ceyuvAdu^somari,puM

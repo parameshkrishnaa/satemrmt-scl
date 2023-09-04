@@ -79,6 +79,7 @@ my($out);
 
       ##########################
       open (TMP, ">/tmp/tel_in");
+      open (TMP1, ">>/tmp/tel_in1");
       	
       #mA_vAdu, where we need generation for vAdu.
       if($rt=~/(.*)_(.*)/){
@@ -107,7 +108,8 @@ my($out);
 			$tam ="wunn";
 		}
 		##tams which dont require gen/num/per
-		if($tam!~/	^A$|^A_A$|^A_aMdi$|^A_alle$|^A_ani$|^A_annamAta$|^A_ata$|^A_e$|^A_le$|^A_leVMdi$|^A_o$|^A_rA$|^A_uta$|^AjFArWa$|^AjFArWa_ammA$|^AjFArWa_ayyA$|^AjFArWa_le$|^AjFArWa_manu$|^AjFArWa_rA$|^AjFArWa_ve$|^a$|^a_A$|^a_aMdi$|^a_alle$|^a_ani$|^a_annamAta$|^a_ata$|^a_e$|^a_le$|^a_leVMdi$|^a_o$|^a_rA$|^a_uta$|^aku$|^iwi$|^iwi_A$|^iwi_aMdi$|^iwi_alle$|^iwi_ani$|^iwi_annamAta$|^iwi_ata$|^iwi_e$|^iwi_le$|^iwi_leVMdi$|^iwi_o$|^iwi_rA$|^iwi_uta$|^uxu$|^uxu_A$|^uxu_aMdi$|^uxu_alle$|^uxu_ani$|^uxu_annamAta$|^uxu_ata$|^uxu_e$|^uxu_le$|^uxu_leVMdi$|^uxu_o$|^uxu_rA$|^uxu_uta$|^wA$|^wA_A$|^wA_aMdi$|^wA_alle$|^wA_ani$|^wA_annamAta$|^wA_ata$|^wA_e$|^wA_le$|^wA_leVMdi$|^wA_o$|^wA_rA$|^wA_uta$|^wunn$|^wunn_A$|^wunn_aMdi$|^wunn_alle$|^wunn_ani$|^wunn_annamAta$|^wunn_ata$|^wunn_e$|^wunn_le$|^wunn_leVMdi$|^wunn_o$|^wunn_rA$|^wunn_uta$|^xA$|^xA_A$|^xA_aMdi$|^xA_alle$|^xA_ani$|^xA_annamAta$|^xA_ata$|^xA_e$|^xA_le$|^xA_leVMdi$|^xA_o$|^xA_rA$|^xA_uta$/) {
+		chomp($tam);
+		if($tam !~/^A$|^A_A$|^A_aMdi$|^A_alle$|^A_ani$|^A_annamAta$|^A_ata$|^A_e$|^A_le$|^A_leVMdi$|^A_o$|^A_rA$|^A_uta$|^AjFArWa$|^AjFArWa_ammA$|^AjFArWa_ayyA$|^AjFArWa_le$|^AjFArWa_manu$|^AjFArWa_rA$|^AjFArWa_ve$|^a$|^a_A$|^a_aMdi$|^a_alle$|^a_ani$|^a_annamAta$|^a_ata$|^a_e$|a_le$|^a_leVMdi$|^a_o$|^a_rA$|^a_uta$|^aku$|^iwi$|^iwi_A$|^iwi_aMdi$|^iwi_alle$|^iwi_ani$|^iwi_annamAta$|^iwi_ata$|^iwi_e$|^iwi_le$|^iwi_leVMdi$|iwi_o$|^iwi_rA$|^iwi_uta$|^uxu$|^uxu_A$|^uxu_aMdi$|^uxu_alle$|^uxu_ani$|^uxu_annamAta$|^uxu_ata$|^uxu_e$|^uxu_le$|^uxu_leVMdi$|^uxu_o$|^uxu_rA$|^uxu_uta$|^wA$|^wA_A$|^wA_aMdi$|^wA_alle$|^wA_ani$|^wA_annamAta$|^wA_ata$|^wA_e$|^wA_le$|^wA_leVMdi$|^wA_o$|^wA_rA$|^wA_uta$|^wunn$|^wunn_A$|^wunn_aMdi$|^wunn_alle$|^wunn_ani$|^wunn_annamAta$|^wunn_ata$|^wunn_e$|^wunn_le$|^wunn_leVMdi$|^wunn_o$|^wunn_rA$|^wunn_uta$|^xA$|^xA_A$|^xA_aMdi$|^xA_alle$|^xA_ani$|^xA_annamAta$|^xA_ata$|^xA_e$|^xA_le$|^xA_leVMdi$|^xA_o$|^xA_rA$|^xA_uta$/) {
 			$gen = "any";
 			$per = "any";
 			$num = "any";
@@ -118,7 +120,7 @@ my($out);
 			#if($gen=~/^m$|^f$|^n$/) {
 			#			$per = "3";
 			#}
-			if ($tam eq "wunn" && $per =~/^1$|^2$/) {
+			if ($per =~/^1$|^2$/) {
 				$gen="any";
 			}
 			#if(($per=~/s/)&&($gen=~/pu/)){
@@ -190,7 +192,9 @@ my($out);
 	if ($flag == 1) { $wrd=$rt1."_".$wrd; $flag=0;}
 
       print TMP $wrd;
+      print TMP1 $wrd;
       close (TMP);
+      close (TMP1);
 	  #system("/usr/bin/lt-proc -c -g  $SCLINSTALLDIR/MT/prog/tel/word_gen/telugu-apertium.mogen < /tmp/tel_in > /tmp/tel_out");
 	  #system("/usr/bin/lt-proc -c -g  $SCLINSTALLDIR/MT/prog/tel/word_gen/tel_apertium_v1.1.mogen < /tmp/tel_in > /tmp/tel_out");
 	  #updated new generator 17/04/2023

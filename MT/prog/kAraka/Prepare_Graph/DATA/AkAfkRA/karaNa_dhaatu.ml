@@ -26,6 +26,7 @@ value karaNa_XAwu_list = [
 "ava_gam1";
 "ava_i1";
 "aXi_gam1";
+"ax2";
 "Baj1";
 "banX1";
 "baX1";

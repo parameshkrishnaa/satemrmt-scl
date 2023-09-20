@@ -53,26 +53,44 @@ sub add_ki{
 
 	   #print "##Var_nm:|$var_nm:|${$var_nm}[$morph_kaaraka_anal]|\n";
       if(${$var_nm}[$morph_kaaraka_anal] =~ /<rel_nm:karma><relata_pos:([0-9\.]+)>/){
-         $verb_pos = $1;
-        $new_var_nm = "wrd_ana_flds_".$verb_pos;
-         $karma_found = 1;
-	 $karma_pos=$j;
-          $new_var_nm = "wrd_ana_flds_".$verb_pos;
+		  $verb_pos = $1;
+		  $new_var_nm = "wrd_ana_flds_".$verb_pos;
+		  $karma_found = 1;
+		  $karma_pos=$j;
+		  $new_var_nm = "wrd_ana_flds_".$verb_pos;
 		  # print "###|$new_var_nm|$ana_fld_for_calling_gen_after_lwg|\n";
-# If the verb has yA tam
-		  #     if(${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ /yA$/) {
-# Then change the viBakwi to ne, if the verb is not from exceptional verb list
-	  #Also now verb is no longer in agreement with the karwA, and hence remove the aBihiwa_karwA info.
-	  ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ /^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) /;
-             $tel_verb = $1;
-			 #print "|tel_verb|\n";
-			 #print "####|$tel_verb| ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg]|\n";
-             ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ /^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) /;
-             if($EXCPT_KI{$tel_verb} == 1) {
-                 ${$var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ni/$1 $2 $3 $4 $5 ki/;
-                 ${$var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ni/$1 $2 $3 $4 $5 ki/;
-             }
-          }
+		  # If the verb has yA tam
+		  # Then change the viBakwi to ne, if the verb is not from exceptional verb list
+		  #Also now verb is no longer in agreement with the karwA, and hence remove the aBihiwa_karwA info.
+		  ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ /^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) /;
+		  $tel_verb = $1;
+		  #print "|tel_verb|\n";
+		  #print "####|$tel_verb| ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg]|\n";
+		  ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ /^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) /;
+		  if($EXCPT_KI{$tel_verb} == 1) {
+			  ${$var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ni/$1 $2 $3 $4 $5 ki/;
+			  ${$var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ni/$1 $2 $3 $4 $5 ki/;
+		  }
+	  }
+	  #rAmAya namaH.#sIwAyE namaH----prayojanam relation has ki marker added
+      if(${$var_nm}[$morph_kaaraka_anal] =~ /<rel_nm:prayojanam><relata_pos:([0-9\.]+)>/){
+		  $verb_pos = $1;
+		  $new_var_nm = "wrd_ana_flds_".$verb_pos;
+		  $karma_found = 1;
+		  $karma_pos=$j;
+		  $new_var_nm = "wrd_ana_flds_".$verb_pos;
+		  # print "###|$new_var_nm|$ana_fld_for_calling_gen_after_lwg|\n";
+		  # If the verb has yA tam
+		  # Then change the viBakwi to ne, if the verb is not from exceptional verb list
+		  #Also now verb is no longer in agreement with the karwA, and hence remove the aBihiwa_karwA info.
+		  ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ /^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) /;
+		  $tel_verb = $1;
+		  #print "|tel_verb|\n";
+		  #print "####|$tel_verb| ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg]|\n";
+		  ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ /^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) /;
+		  ${$var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+)/$1 $2 $3 $4 $5 ki/;
+		  ${$var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+)/$1 $2 $3 $4 $5 ki/;
+	  }
   }
 }
 1;

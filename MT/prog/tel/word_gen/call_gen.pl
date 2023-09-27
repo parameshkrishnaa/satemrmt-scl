@@ -143,6 +143,10 @@ my($out);
 		if (($rt=~/^axi$|^ixi$|^exi/)){
 			$gen = "fn";
 		}
+		#yuvAm agacCawAm. 
+		if (($rt=~/^nuvvu$|/ && $num eq "pl")){
+			$gen = "mIru";
+		}
 		#since "vAdu" and "vAlYlu" are different pdgm, this mapping is done Apr 21_2023, Param
 		if (($rt eq "vAdu")&&($cat eq "noun")){
 		$cat="pronoun"; $gen="m"; $per="3";
@@ -178,7 +182,7 @@ my($out);
 		}
 
 		#$tam=~ s/2/ni/;
-		#$wrd="^".$rt."<cat:".$cat."><num:".$num."><parsarg:".$tam.">\$"; }
+		#$wrd="^".$rt."<cat:".$cat."><num:".$num."><parsarg:".$tam.">\$"; 
 		if (($cat eq "noun") ) {
 			$wrd="^".$rt."<lcat:".$cat."><gen:".$gen."><num:".$num."><per:3><cm:".$tam."><suffix:".$tam.">\$"; }
 		else {
@@ -190,6 +194,16 @@ my($out);
 
 		if (($cat eq "avy" && $rt=~/^[\.,_\-]$/) ) {
 			$wrd=$rt;
+		}
+		
+		#		saH awra AgacCawi.
+		#sA awra AgacCawi.
+		#waw awra AgacCawi.
+		#saH wawra gacCawi.
+		#sA wawra gacCawi.
+		#aw wawra gacCawi.
+		if (($cat eq "avy" && $rt=~/^(akkada|ikkada)$/ && $tam == "ki") ) {
+			$wrd=$rt . "ki";
 		}
 	
 	if ($flag == 1) { $wrd=$rt1."_".$wrd; $flag=0;}

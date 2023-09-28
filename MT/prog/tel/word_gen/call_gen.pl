@@ -203,6 +203,7 @@ my($out);
 		#sA wawra gacCawi.
 		#aw wawra gacCawi.
 		if (($cat eq "avy" && $rt=~/^(akkada|ikkada)$/ && $tam == "ki") ) {
+			$rt =~s/a$/i/g;
 			$wrd=$rt . "ki";
 		}
 	

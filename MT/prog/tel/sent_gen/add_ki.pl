@@ -52,7 +52,7 @@ sub add_ki{
        #If the word is karwA, and
 
 	   #print "##Var_nm:|$var_nm:|${$var_nm}[$morph_kaaraka_anal]|\n";
-      if(${$var_nm}[$morph_kaaraka_anal] =~ /<rel_nm:karma><relata_pos:([0-9\.]+)>/){
+      if(${$var_nm}[$morph_kaaraka_anal] =~ /<rel_nm:karma><relata_pos:([0-9\.]+)>/ || ${$var_nm}[$morph_kaaraka_anal] =~ /<rel_nm:xeSAXikaraNam><relata_pos:([0-9\.]+)>/){
 		  $verb_pos = $1;
 		  $new_var_nm = "wrd_ana_flds_".$verb_pos;
 		  $karma_found = 1;
@@ -65,11 +65,16 @@ sub add_ki{
 		  ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ /^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) /;
 		  $tel_verb = $1;
 		  #print "|tel_verb|\n";
-		  #print "####|$tel_verb| ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg]|\n";
+		  # print "####|$tel_verb| ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg]|\n";
+		  #print "3####|$tel_verb| ${var_nm}[$ana_fld_for_calling_gen_after_lwg]|\n";
+		  #print "3####|$tel_verb| ${var_nm}[$ana_fld_for_calling_gen_after_lwg+1]|\n";
 		  ${$new_var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ /^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) /;
-		  if($EXCPT_KI{$tel_verb} == 1) {
+		  if($EXCPT_KI{$tel_verb} == 1 && ${$var_nm}[$morph_kaaraka_anal] =~ /<rel_nm:karma><relata_pos:([0-9\.]+)>/) {
 			  ${$var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ni/$1 $2 $3 $4 $5 ki/;
 			  ${$var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ni/$1 $2 $3 $4 $5 ki/;
+		  } elsif($EXCPT_KI{$tel_verb} == 1 && ${$var_nm}[$morph_kaaraka_anal] =~ /<rel_nm:xeSAXikaraNam><relata_pos:([0-9\.]+)>/) {
+			  ${$var_nm}[$ana_fld_for_calling_gen_after_lwg] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+)/$1 $2 $3 $4 $5 ki/;
+			  ${$var_nm}[$ana_fld_for_calling_gen_after_lwg+1] =~ s/^([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+) ([^ ]+)/$1 $2 $3 $4 $5 ki/;
 		  }
 	  }
 	  #rAmAya namaH.#sIwAyE namaH----prayojanam relation has ki marker added

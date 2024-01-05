@@ -58,6 +58,7 @@ while($in = <STDIN>){
     $i = 0;
     while($i < $#in) {
        @f = split(/\t/,$in[$i]);
+        #$last[$i] = $f[$morph_kaaraka_anal];
        if ($last[$i] eq "") {     # This is to ensure that the last[$i+1] defined below does not get overwritten.
           print $last[$i],"\n";
           $last[$i] = $f[$morph_kaaraka_anal];

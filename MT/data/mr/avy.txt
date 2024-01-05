@@ -201,6 +201,7 @@ sahasraSaH,avy,hajAra-hajAra_karUna
 sahasrakqwvaH,avy,hajAraveLyA
 sakqw,avy,ekaxA^eke_veLyI^pUrvI
 samAnam,avy,pramANe^barobara
+samIpam,avy,javalYa^nikata
 samIpawaH,avy,javalYa^nikata
 samam,avy,saha^ekawra^wulyawene^eke_kALyI
 samanwAw,avy,sarvawra^saBovAra

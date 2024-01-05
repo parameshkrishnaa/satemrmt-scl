@@ -32,7 +32,7 @@ wax,swrI,wI
 yax,napuM,je
 yax,puM,jo
 yax,swrI,jI
-yuRmax,a,wumhI
+yuRmax,a,wU
 #kimciw,puM,koNI #why this entry is here? Already kiFciw entry is there. This entry should be removed.
 #kimciw,napuM,koNI #why this entry is here? Already kiFciw entry is there. This entry should be removed.
 #kimciw,swrI,koNI #why this entry is here? Already kiFciw entry is there. This entry should be removed.

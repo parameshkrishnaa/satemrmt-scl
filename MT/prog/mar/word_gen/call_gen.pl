@@ -51,19 +51,27 @@ while($in = <STDIN>){
  @f = split(/\t/,$in);
 
  if($in) {
-   my $out = &call_gen($f[15],"ON","NOT");
+	 #open (TMP,">>/tmp/bb");
+	 #print TMP $f[14],"\n";
+	 #close (TMP);
+   my $out = &call_gen($f[14]);
    print $out;
  } 
  print "\n";
 }
 
 sub call_gen{
-my($in,$show,$not) = @_;
+my($in) = @_;
 
-my($out);
+
+my($out,$str,$ans);
+   $out = "";
+   $str = "";
+   $ans = "";
       $in =~ s/\/$//;
       ($rt,$cat,$gen,$num,$per,$tam) = split(/ /,$in);
-	$tam=~s/tam://g;
+      #print "TAM = $tam\n";
+
       if($rt =~ /^(.*-)([^\-]+)$/) { $pUrva = $1; $rt = $2;} else {$pUrva = "";}
       # ($rt,$tam) = split(/:/,&handle_hE($rt,$tam));
       #($rt,$cat) = split(/:/,&handle_Bavaw($rt,$cat));
@@ -73,54 +81,55 @@ my($out);
       #$out = `$SCLINSTALLDIR/MT/prog/hn/word_gen/test/new_gen.out $show $not $rt $cat $gen $num $per $tam`;
       
       ##########################
-      open (TMP, ">/tmp/mar_in");
-=head
-      if ($cat eq "v") {
-      		#veVlYlu<cat:v><gnp:3_pu_e><tam:wunn>
-      		$gen=~ s/m/pu/;
-      		$num=~ s/s/e/;
-      		$tam=~ s/tunn/wunn/;
-      		$wrd="^".$rt."<cat:".$cat."><gnp:3\_".$gen."\_".$num."><tam:".$tam.">\$"; }
+      #open (TMP, ">/tmp/mar_in");
+      if($cat eq "v") {
+         $tam =~ s/tam://;
+         if ( $tam eq "wa_asa_I" ) {
+		print $rt."wa_";
+         $str = "asa<cat:$cat><tam:I><gender:$gen><number:$num><person:$per>";
+      }
+      elsif ($tam eq "Ne_sATI") {
+         $str = "$rt<cat:n><cat:v><suff:Ne><parsarg:sATI>";
+         
+         }
+      else {
+               $str = "$rt<cat:$cat><tam:$tam><gender:$gen><number:$num><person:$per>";
+               }
+              }
+      if($cat eq "P") {
+         $tam =~ s/tam://;
+	 if ($rt eq "mI") { $gen = "any";}
+	 elsif ($rt eq "wU") { $gen = "any";}
+	 elsif ($rt eq "wo") { $gen = "m";}
+	 elsif ($rt eq "wI") { $gen = "f";}
+	 elsif ($rt eq "we") { $gen = "n";}
+	 #elsif ($rt eq "hA") { $gen = "n";}
+         $str = "$rt<cat:$cat><gender:$gen><number:$num><parsarg:$tam>";
+      }
+      if($cat eq "avy") {
+         $tam =~ s/tam://;
+         if (($rt eq "Aja") || ($rt eq "nehamI") || ($rt eq "Aja")) {
+             $str = "$rt<cat:n><gender:m><number:eka><parsarg:0>";
+             }
+             
+             else {
+         $str = "$rt<cat:$cat>";
+      }
+      }
+      if($cat eq "n") {
+         $tam =~ s/tam://;
+         $str = "$rt<cat:$cat><gender:$gen><number:$num><parsarg:$tam>";
+      }
 	
-	elsif (($cat eq "n") || ($cat eq "P")) {
-      		#^sIwani/sIwa<cat:n><num:eka><parsarg:ni>$
-		$num=~ s/s/eka/;
-		#$tam=~ s/2/ni/;
-      		$wrd="^".$rt."<cat:".$cat."><num:".$num."><parsarg:".$tam.">\$"; }
-else {
-		$wrd=$rt."_".$tam;
-	     }
-=cut
-$num=~s/s/sg/g;
-$num=~s/p/pl/g;
-$num=~s/a/any/g;
-$per=~s/a/any/g;
-$gen=~s/m/nm/g;
-	  if($cat eq "v") {
-$gen=~s/nn/n/g;
-$gen=~s/nm/m/g;
-if($tam=~/^wo$/ && $gen=~/^m$/) {
-	$per = "1";	#jAwo
-}
-			$wrd="^".$rt."<pos:".$cat."><tam:".$tam."><gender:".$gen."><number:".$num."><person:".$per.">\$"; 
-		  #$wrd="^".$rt."<pos:".$cat."><tam:".$tam."><gender:any><number:pl><person:2>\$"; 	#works for gacCawi
-  } else {
-      $wrd="^".$rt."<pos:".$cat."><gender:".$gen."><number:".$num."><parsarg:".$tam.">\$"; 
-  }
-      #jA<pos:v><tam:wo><gender:any><number:pl><person:2>
-      print TMP $wrd;
-      close (TMP);
-      system("/usr/bin/lt-proc -c -g  $SCLINSTALLDIR/MT/prog/mar/word_gen/mar_gen.bin < /tmp/mar_in > /tmp/mar_out");
-      open(MARGEN,"</tmp/mar_out");
-      $out=<MARGEN>;
-      $out=~s/\/.*//;
-      chomp($out);
-      close(MARGEN);
-  #genWrd;
-  #   print $out;
-      ########################
-=head
-=cut
+      $ans = "echo '$str' | lt-proc -ct /home/amruta/satemrmt-scl/MT/prog/mar/word_gen/mar_gen.bin";
+      open (TMP,">>/tmp/xx");
+      print TMP $ans,"\n";
+      close(TMP);
+      $out = `$ans`;
+      open (TMP,">>/tmp/yy");
+      print TMP $out;
+      close(TMP);
+
       $out =~ s/__/-/g;
       $out = $pUrva.$out;
 $out;

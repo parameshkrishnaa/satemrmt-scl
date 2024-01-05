@@ -107,7 +107,7 @@ while($tmpin = <STDIN>){
     @f = split(/\t/,$tmpin);
     $word = $f[1];
     $kAraka = $f[7];
-    $in = $f[10];
+    $in = $f[12];
 
     $in =~ s/\/.*//;
     $in =~ s/></;/g;
@@ -126,9 +126,9 @@ while($tmpin = <STDIN>){
        $map_viBakwi = &get_dict_mng($viBakwi, $rTAM);
 
        $hn_lifga = &get_hn_P_lifga($map_rt,$lifga);
-       $hn_vacana = &get_hn_vacana($vacana);
+       $mr_vacana = &get_mr_vacana($vacana);
        $hn_puruRa = &get_hn_purURa_sarvanAma($rt);
-       $ans = "$map_rt $cat $hn_lifga $hn_vacana $hn_puruRa $map_viBakwi";
+       $ans = "$map_rt $cat $hn_lifga $mr_vacana $hn_puruRa $map_viBakwi";
 
       } elsif($cat eq "kqw_noun") {
 
@@ -148,9 +148,9 @@ while($tmpin = <STDIN>){
 	  #print "map_viBakwi = $map_viBakwi\n";
           if($map_rt =~ /(.*):(.*)/) { $map_rt = $1; $hn_lifga = &get_skt_hn_lifga($2);}
          # $hn_lifga = &get_hn_lifga($map_rt,$lifgam);
-          $hn_vacana = &get_hn_vacana($vacana);
+          $mr_vacana = &get_mr_vacana($vacana);
 
-          $ans = "$map_rt $cat $hn_lifga $hn_vacana $default_puruRa $map_viBakwi";
+          $ans = "$map_rt $cat $hn_lifga $mr_vacana $default_puruRa $map_viBakwi";
        } else {
 	       #The word is not rUDa kqxanwa, and hence its meaning is compositional
          $cat = "v";
@@ -161,9 +161,9 @@ while($tmpin = <STDIN>){
          $map_kqw = &get_dict_mng($kqw, $rTAM);
 
          $hn_lifga = &get_skt_hn_lifga($lifgam);
-         $hn_vacana = &get_hn_vacana($vacana);
+         $mr_vacana = &get_mr_vacana($vacana);
 
-         $ans =  "$map_rt $cat $hn_lifga $hn_vacana $default_puruRa $map_kqw";
+         $ans =  "$map_rt $cat $hn_lifga $mr_vacana $default_puruRa $map_kqw";
       }
       } elsif($cat eq "waxXiwa_noun") {
       
@@ -175,10 +175,10 @@ while($tmpin = <STDIN>){
        $map_waxXiwa = &get_dict_mng($waxXiwa_prawyaya, $rTAM);
        $rt .= $map_waxXiwa;
        $hn_lifga = &get_skt_hn_lifga($lifgam);
-       $hn_vacana = &get_hn_vacana($vacana);
+       $mr_vacana = &get_mr_vacana($vacana);
        $map_viBakwi = &get_dict_mng($viBakwi, $rTAM);
        $infl_map_waxXiwa = &get_inflected_waxXiwa($map_waxXiwa, $hn_lifga, $map_viBakwi);
-       $ans =  "$map_rt n $hn_lifga $hn_vacana $default_puruRa $infl_map_waxXiwa";
+       $ans =  "$map_rt n $hn_lifga $mr_vacana $default_puruRa $infl_map_waxXiwa";
       } elsif($cat eq "n") {
 
         ($rt,$lifga,$viBakwi,$vacana,$rel) = split(/:/, &get_noun_features($in));
@@ -198,10 +198,10 @@ while($tmpin = <STDIN>){
 
        $map_viBakwi = &get_dict_mng($viBakwi, $rTAM);
       
-       if($map_rt =~ /(.*):(.*)/) { $map_rt = $1; $hn_lifga = &get_skt_hn_lifga($2);}
+       if($map_rt =~ /(.*):(.*)/) { $map_rt = $1; $mr_lifga = &get_skt_mr_lifga($2);}
        #$hn_lifga = &get_hn_lifga($map_rt,$lifga);
-       $hn_vacana = &get_hn_vacana($vacana);
-       $ans = "$map_rt $cat $hn_lifga $hn_vacana $default_puruRa $map_viBakwi";
+       $mr_vacana = &get_mr_vacana($vacana);
+       $ans = "$map_rt $cat $mr_lifga $mr_vacana $default_puruRa $map_viBakwi";
 
        #print "ans = $ans\n";
       } elsif($cat eq "kqw_avy") {
@@ -305,11 +305,10 @@ while($tmpin = <STDIN>){
        $pra_lakAra = $prayoga."_".$lakAra;
        $map_lakAra = &get_dict_mng($pra_lakAra, $rTAM);
 
-       $hn_purURa = &get_hn_purURa($purURa);
-       $hn_vacana = &get_hn_vacana($vacana);
+       $mr_purURa = &get_mr_purURa($purURa);
+       $mr_vacana = &get_mr_vacana($vacana);
 
-       $ans = "$map_rt $cat $default_lifga $hn_vacana $hn_purURa $map_lakAra";
-
+       $ans = "$map_rt $cat $default_lifga $mr_vacana $mr_purURa $map_lakAra";
    } else {
        # This is to handle the words unrecognised by morph
        $map_rt = $word;
@@ -353,6 +352,19 @@ $lifga;
 }
 1;
 
+sub get_skt_mr_lifga{
+ my($lifga) = @_;
+
+ if($lifga eq "napuM") { $lifga = "n";}
+ elsif($lifga eq "puM") { $lifga = "m";}
+ elsif($lifga eq "swrI") { $lifga = "f";}
+ elsif($lifga eq "a") { $lifga = "m";}
+ else { $lifga = "m";} # Default value, in case of any error
+
+$lifga;
+}
+1;
+
 sub get_skt_hn_lifga{
  my($lifga) = @_;
 
@@ -378,7 +390,7 @@ $lifga;
 }
 1;
 
-sub get_hn_purURa{
+sub get_mr_purURa{
  my($purURa) = @_;
 
  if($purURa eq "u") { $purURa = "1";}
@@ -394,22 +406,19 @@ sub get_hn_purURa_sarvanAma{
 
  my($purURa) = "";
 
- if($rt eq "asmax") { $purURa = "1";}
- elsif($rt eq "yuRmax") { $purURa = "2";}
- else { $purURa = "3";}
+ if($rt eq "asmax") { $purURa = "u";}
+ elsif($rt eq "yuRmax") { $purURa = "m";}
+ else { $purURa = "a";}
 
 $purURa;
 }
 1;
 
-sub get_hn_vacana{
+sub get_mr_vacana{
  my($vacana) = @_;
 
-# if($vacana eq "1") { $vacana = "s";}
-# elsif($vacana eq "2") { $vacana = "p";}
-# elsif($vacana eq "3") { $vacana = "p";}
- if($vacana eq "eka") { $vacana = "s";}
- else { $vacana = "p";}
+ if($vacana eq "eka") { $vacana = "eka";}
+ else { $vacana = "bahu";}
 
 $vacana;
 }
@@ -619,9 +628,9 @@ my $ans = $rt;
 		  #$rt =~ s/X_//; # In case of upasargas
 #This has been added to take care of Names that are not to be translated.
           $ans = $rt;
-	  $ans =~ s/_puM//; 
-	  $ans =~ s/_napuM//; 
-	  $ans =~ s/_swrI//; 
+	  #$ans =~ s/_puM//; 
+	  #$ans =~ s/_napuM//; 
+	  #$ans =~ s/_swrI//; 
        }
 $ans;
 }

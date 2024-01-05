@@ -2982,6 +2982,7 @@ gir,swrI,BARaNa^BARA^sarasvawI^swuwI^SravaNajanya_jFAna,napuM
 gIwa,napuM,gIwa^gANe^gAyalele,napuM
 gIwa,puM,gAyalelA,napuM
 gIwa,swrI,gAyalelI^ISvaraguNa_varNaNArA_graMWa,swrI
+gIwA,swrI,gIwA,swrI
 gIwi,swrI,gIwa,napuM
 glAni,swrI,glAnI,swrI
 Gna,napuM,vinASaka,napuM
@@ -4244,7 +4245,7 @@ jalamuk,puM,Daga,puM
 jalamUrwikA,swrI,pANyAcI_gAra,swrI
 jalamUrwi,puM,Siva(viSeRaNa),puM
 jalanakula,puM,pANamAMjara,napuM
-jala,napuM,jala^pANI,napuM
+jala,napuM,pANI^jala,napuM
 jAla,napuM,jAlYe,napuM
 jalanara,puM,jalapuruRa,puM
 jalanikewana,napuM,pANyAcyA_maXyaBAgI_bAMXalele_Gara,napuM
@@ -12251,7 +12252,7 @@ piwarO,puM,mAwA_piwA,puM
 piwqBakwi,swrI,piwqBakwI,swrI
 piwqpEwAmaha,puM,pEwqka,puM
 piwqpEwAmaha,swrI,pEwqka,swrI
-piwq,puM,piwA,puM
+piwq,puM,vadIla^piwA,puM
 piwqvya,puM,kAkA,puM
 piwqxawwa,napuM,piwqxawwa,napuM
 piwqxawwa,puM,piwqxawwa,puM

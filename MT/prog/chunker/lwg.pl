@@ -58,7 +58,11 @@ while($in = <STDIN>){
     $i = 0;
     while($i < $#in) {
        @f = split(/\t/,$in[$i]);
-       $last[$i] = $f[$morph_kaaraka_anal];
+        #$last[$i] = $f[$morph_kaaraka_anal];
+       if ($last[$i] eq "") {     # This is to ensure that the last[$i+1] defined below does not get overwritten.
+          print $last[$i],"\n";
+          $last[$i] = $f[$morph_kaaraka_anal];
+       }
        @s = split(/\t/,$in[$i+1]);
        $last[$i+1] = $s[$morph_kaaraka_anal];
 #Join two words where first word has lat lakaara, and the second word is `sma'

@@ -45,6 +45,5 @@ require "$GlblVar::SCLINSTALLDIR/converters/convert.pl";
   close(TMP);
 
   print "Content-type:text/html;-expires:60*60*24;charset:UTF-8\n\n";
-#  system("python3 ./ymk_code_93.py < /private/tmp/a");
-  system("python3 ./ymk_main.py < /private/tmp/a");
+  system("python3 ./ymk_code_93.py < /private/tmp/a");
 

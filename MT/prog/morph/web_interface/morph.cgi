@@ -141,10 +141,10 @@ my $format;
             } elsif ($ans =~ /saMKyeya/) {
               $link = &handle_noun($format,$rt,$rt_outencoding,$lifga,'saMKyeyam',$outencoding,$ans); 
               $color = "skyblue";
-            } elsif ($ans =~ /{vargaH:sarva}/){
+            } elsif ($ans =~ /sarvanAma/){
               $link = &handle_noun($format,$rt,$rt_outencoding,$lifga,'sarva',$outencoding,$ans); 
               $color = "skyblue";
-            } elsif (($ans =~ /(lat|lit|lut|lot|lqt|laf|lqf|luf|lif)/) || ($ans =~ /avy.*kqxanwa/)) {
+            } elsif (($ans =~ /(lat|llit|lut|lot|lqt|laf|lqf|luf|lif)/) || ($ans =~ /avy.*kqxanwa/)) {
                  $link = &handle_verb($format,$rt,$upasarga,$outencoding,$ans);
                  $color = "pink";
             } else {

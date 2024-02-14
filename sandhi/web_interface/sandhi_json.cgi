@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-#  Copyright (C) 2023-2022 Anil and Amba Kulkarni (ambapradeep@gmail.com)
+#  Copyright (C) 2022-2023 Anil and Amba Kulkarni (ambapradeep@gmail.com)
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -105,6 +105,10 @@ sub call_sandhi {
        $results .= '"@'.'saMhiwapaxam":"'.$forms[$x].'",';
        $results .= '"@'.'sanXiH":"'.$pra_steps[$x].'",';
        $results .= '"@'.'sUwram":"'.$sutras[$x].'"},';
+       #$sutras[$x] =~ s/.*\(//;
+       #$sutras[$x] =~ s/\)//;
+       #$sutras[$x] =~ s/\./\//g;
+       #$results .= '"@'.'sUwra_@'.'link":"@'.'https://@'.'ashtadhyayi.@'.'com/@'.'sutraani/'.$sutras[$x].'"},';
      }
     }
     

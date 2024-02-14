@@ -2612,9 +2612,9 @@ var root_info = {
     dev: "गुध् (गुधँ) रोषे क्र्यादिः",
     rom: "gudh (gudhaṁ) roṣe kryādiḥ"
   },
-  'guX1_gqXuz_xivAxiH_pariveRtane': {
-    dev: "गुध् (गृधुँ) परिवेष्टने दिवादिः",
-    rom: "gudh (gṛdhuṁ) pariveṣṭane divādiḥ"
+  'guX1_guXaz_xivAxiH_pariveRtane': {
+    dev: "गुध् (गुधँ) परिवेष्टने दिवादिः",
+    rom: "gudh (gudhaṁ) pariveṣṭane divādiḥ"
   },
   'gunP1_gunPaz_wuxAxiH_granWe': {
     dev: "गुन्फ् (गुन्फँ) ग्रन्थे तुदादिः",

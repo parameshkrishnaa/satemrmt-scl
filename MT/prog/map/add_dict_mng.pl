@@ -107,7 +107,7 @@ while($tmpin = <STDIN>){
     @f = split(/\t/,$tmpin);
     $word = $f[1];
     $kAraka = $f[7];
-    $in = $f[10];
+    $in = $f[12];
 
     $in =~ s/\/.*//;
     $in =~ s/></;/g;
@@ -242,6 +242,7 @@ while($tmpin = <STDIN>){
 
           ($rt,$rel) = split(/:/,&get_avy_feature($in));
 	  #print "rt = ", $rt,"\n";
+	  #print "in = ", $in,"\n";
 
           $map_rt = &get_dict_mng($rt, $rAVY);
 	  #print "map_rt = ", $map_rt,"\n";
@@ -249,7 +250,7 @@ while($tmpin = <STDIN>){
 
       } elsif($cat eq "v") {
 
-       ($rt,$prayoga,$lakAra,$purURa,$vacana,$paxI,$XAwu,$gaNa,$rel) = 
+       ($rt,$prayoga,$lakAra,$purURa,$vacana,$paxI,$gaNa,$rel) = 
           split(/:/, &get_verb_features($in));
        
 	  # If karma is absent in a sentence, then the verb is assumed 
@@ -314,7 +315,8 @@ while($tmpin = <STDIN>){
        # This is to handle the words unrecognised by morph
        $map_rt = $word;
        $map_rt =~ s/^\-//;
-       if($map_rt eq ".") { 
+       if($in eq "-") { $ans = "- avy NW NW NW NW";} # Case of sma
+       elsif($map_rt eq ".") { 
          $ans = "$map_rt avy NW NW NW NW";
        } else {
          $cat = "n";
@@ -500,7 +502,7 @@ sub get_verb_features{
 my($in) = @_;
 my $ans = "";
 
-    if($in =~ /^.*rt:([^;]+).*prayogaH:([^;]+);lakAraH:([^;]+);puruRaH:([^;]+);vacanam:([^;]+);.*paxI:([^;]+);.*XAwuH:([^;]+);gaNaH:([^;]+)/){
+    if($in =~ /^.*rt:([^;]+).*prayogaH:([^;]+);lakAraH:([^;]+);puruRaH:([^;]+);vacanam:([^;]+);.*paxI:([^;]+);.*gaNaH:([^;]+)/){
 
      $rt = $1;
      $prayoga = $2;
@@ -508,13 +510,12 @@ my $ans = "";
      $puruRa = $4;
      $vacana = $5;
      $paxI = $6;
-     $XAwu = $7;
      $gaNa = $7;
      $in =~ s/upasarga:X;//;
      if($paxI eq "parasmEpaxI") { $paxI = "pp";} else {$paxI = "ap";}
      if ($in =~ /upasarga:([^;]+)/) { $rt = $1."_".$rt;}
      if ($in =~ /sanAxi_prawyayaH:([^;]+)/) { $rt = $rt."_".$1;}
-     $ans = join(":",$rt,$prayoga,$lakAra,$puruRa,$vacana,$paxI,$XAwu,$gaNa);
+     $ans = join(":",$rt,$prayoga,$lakAra,$puruRa,$vacana,$paxI,$gaNa);
     }
 $ans;
 }

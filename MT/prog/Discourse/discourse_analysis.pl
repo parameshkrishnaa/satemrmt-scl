@@ -39,6 +39,7 @@ sub read_and_print_first_file {
   open (TMP1,"<$fl_nm");
 
   while($in = <TMP1>){
+   chomp($in);
    @flds = split(/\t/,$in);
    $flds[0] =~ /^([0-9\.]+)/;
    $indx = $1;
@@ -65,7 +66,7 @@ sub read_and_print_first_file {
        $niwya_connective1_pos = $indx;
        $niwya_connective1 = $flds[$wrd_fld_id];
    }
- print $in;
+ print $in, "\n";
  }
  close ($TMP1);
 join ('#', $discourse_connective1,$niwya_connective1,$niwya_connective1_pos,$last_verb_indx);
@@ -89,24 +90,34 @@ sub read_second_file {
  if($sent_id == 1) { print $in; }
 
  while($in = <TMP1>){
+   chomp($in);
    @flds = split(/\t/,$in);
    $flds[0] =~ /^([0-9\.]+)/;
    $indx = $1;
    $flds[0] =~ /^([0-9]+)/;
    $wrd_id = $1;
-   if (&member_discourse_connective2($flds[$wrd_fld_id])) {
+	#print "###", $flds[$wrd_fld_id],"\n";
+   if ( &member_discourse_connective2($flds[$wrd_fld_id]) && 
+       ($flds[$karaka_rel_fld] =~ /सम्बन्धः/ || $flds[$karaka_rel_fld] =~ /_द्योतकः/ ||
+       $flds[$karaka_rel_fld] =~ /sambandhaḥ/ || $flds[$karaka_rel_fld] =~ /_dyotakaḥ/)
+      ) {
        $discourse_connective2 = $flds[$wrd_fld_id];
        $flds[$karaka_rel_fld] =~ /,([0-9\.]+)/;
        $verb_indx = $1;
+	#print "###", $discourse_connective2,"\n";
    }
-   elsif (&member_niwya_connective2($flds[$wrd_fld_id])) {
+   if (&member_niwya_connective2($flds[$wrd_fld_id])) {
        $niwya_connective2_pos = $indx;
        $niwya_connective2 = $flds[$wrd_fld_id];
    }
-   elsif($wrd_id == 2) {
-      if ( ($flds[$wrd_fld_id] eq "च") || ($flds[$wrd_fld_id] eq "ca")) { $samuccaya_xyowakaH_indx = $indx;}
-      elsif ( ($flds[$wrd_fld_id] eq "अपि") || ($flds[$wrd_fld_id] eq "api")) { $samuccaya_xyowakaH_indx = $indx;}
-      elsif ( ($flds[$wrd_fld_id] eq "वा") || ($flds[$wrd_fld_id] eq "vāā")) { $anyawara_xyowakaH_indx = $indx;}
+   if(($wrd_id == 2) || ($wrd_id == 3)) {
+      if (( ($flds[$wrd_fld_id] eq "च") || ($flds[$wrd_fld_id] eq "ca"))  ||
+         ( ($flds[$wrd_fld_id] eq "अपि") || ($flds[$wrd_fld_id] eq "api")) ) { $samuccaya_xyowakaH_indx = $indx;}
+      elsif   ( ($flds[$wrd_fld_id] eq "वा") || ($flds[$wrd_fld_id] eq "vāā")) { $anyawara_xyowakaH_indx = $indx;}
+   } else {
+      if  (  (($flds[$wrd_fld_id] eq "च") || ($flds[$wrd_fld_id] eq "ca")) 
+           && (($flds[$karaka_rel_fld] =~ /sambandhaḥ/) || ($flds[$karaka_rel_fld] =~ /सम्बन्धः/)))
+           {$samuccaya_xyowakaH_indx = $indx;}
    }
    if($flds[$color_code_fld] eq "KP") { $verb_indx = $indx;}
    else { 
@@ -128,12 +139,12 @@ join('#',$samuccaya_xyowakaH_indx,$anyawara_xyowakaH_indx,$discourse_connective2
 1;
 
 sub mark_discourse_rels {
-  my($sent_anal_fl, $sent_id,$wrd_fld_id, $color_code_fld, $karaka_rel_fld, $samuccaya_xyowakaH_indx, $anyatara_xyowakaH_indx, $discourse_connective2, $niwya_connective1, $niwya_connective2_pos,$verb_indx, $discourse_connective1, $niwya_connective1, $niwya_connective1_pos,$last_verb_indx,$tab) = @_;
+  my($sent_anal_fl, $sent_id,$wrd_fld_id, $color_code_fld, $karaka_rel_fld, $samuccaya_xyowakaH_indx, $anyatara_xyowakaH_indx, $discourse_connective2, $niwya_connective2, $niwya_connective2_pos,$verb_indx, $discourse_connective1, $niwya_connective1, $niwya_connective1_pos,$last_verb_indx,$tab) = @_;
 
  my($wrd_id, @flds );
 
-print "LVI = $last_verb_indx\n";
-print "VI = $verb_indx\n";
+#print "LVI = $last_verb_indx\n";
+#print "VI = $verb_indx\n";
  open (TMP1,"<$sent_anal_fl");
 
   $in = <TMP1>; # ignore the title
@@ -147,7 +158,17 @@ print "VI = $verb_indx\n";
    $in =~ s/,([0-9\.]+)/,$sent_id.$1/g;
    @flds = split(/\t/,$in);
 
-   if($discourse_connective2 ne "") {
+   if (($niwya_connective1_pos > -1) && ($niwya_connective2_pos > -1)) {
+         if (($flds[0] =~ /^$sent_id.$niwya_connective2_pos/) && (&pair($niwya_connective1,$niwya_connective2))) {
+            if($out_encoding eq "IAST") { 
+               $flds[$karaka_rel_fld] .= ";nitya_sambandhaḥ,$niwya_connective1_pos";
+            } else {
+               $flds[$karaka_rel_fld] .= ";नित्य_सम्बन्धः,$niwya_connective1_pos";
+            }
+         }
+      $in = join("$tab",@flds);
+   }
+   elsif($discourse_connective2 ne "") {
       if ($flds[0] =~ /^$sent_id.$verb_indx/) {
          $rel = &get_rel($discourse_connective2);
          $flds[$karaka_rel_fld] = "$rel,$last_verb_indx";
@@ -159,16 +180,6 @@ print "VI = $verb_indx\n";
          $rel = &get_rel($discourse_connective1);
          $flds[$karaka_rel_fld] = "$rel,$last_verb_indx";
       }
-      $in = join("$tab",@flds);
-   }
-   elsif (($niwya_connective1_pos > -1) && ($niwya_connective2_pos > -1)) {
-         if (($flds[0] =~ /^$sent_id.$niwya_connective2_pos/) && (&pair($niwya_connective1,$niwya_connective2))) {
-            if($out_encoding eq "IAST") { 
-               $flds[$karaka_rel_fld] .= ";nitya_sambandhaḥ,$niwya_connective1_pos";
-            } else {
-               $flds[$karaka_rel_fld] .= ";नित्य_सम्बन्धः,$niwya_connective1_pos";
-            }
-         }
       $in = join("$tab",@flds);
    }
    else {
@@ -220,11 +231,9 @@ my($fld) = @_;
 my ($word) = "";
  if (($fld eq "यदि") || 
      ($fld eq "यद्यपि") ||
-     ($fld eq "अथापि") || 
      ($fld eq "यतः") || 
      ($fld eq "yadi")  ||
      ($fld eq "yadyapi") ||
-     ($fld eq "athāpi") ||
      ($fld eq "yataḥ")) {
    $word = $fld;
  }
@@ -245,13 +254,18 @@ my ($word) = "";
      ($fld eq "ततः") || 
      ($fld eq "तस्मात्") || 
      ($fld eq "अतः") || 
+     ($fld eq "अथापि") || 
+     ($fld eq "अथ") || 
      ($fld eq "tarhi")  ||
      ($fld eq "tathāpi") ||
      ($fld eq "cedapi") ||
      ($fld eq "sannapi") ||
      ($fld eq "tarhyapi") ||
      ($fld eq "tataḥ") ||
-     ($fld eq "ataḥ")) {
+     ($fld eq "tasmāt") ||
+     ($fld eq "ataḥ") ||
+     ($fld eq "athāpi") ||
+     ($fld eq "atha")) {
       $word = $fld;
   }
  $word;
@@ -267,12 +281,14 @@ $rel = "";
 
 if ($discourse_connective eq "yadi") { $rel = "āvaśyakatā-pariṇāma-sambandhaḥ";}
 elsif ($discourse_connective eq "यदि") { $rel = "आवश्यकता-परिणाम-सम्बन्धः";}
-elsif ($discourse_connective eq "तर्हि") { $rel = "आवश्यकता-परिणाम-सम्बन्धः";}
 elsif ($discourse_connective eq "tarhi") { $rel = "āvaśyakatā-pariṇāma-sambandhaḥ";}
+elsif ($discourse_connective eq "तर्हि") { $rel = "आवश्यकता-परिणाम-सम्बन्धः";}
 elsif ($discourse_connective eq "यद्यपि") { $rel = "व्यभिचारः";}
 elsif ($discourse_connective eq "yaxyapi") { $rel = "vyabhicāraḥ";}
 elsif ($discourse_connective eq "तर्ह्यपि") { $rel = "व्यभिचारः";}
 elsif ($discourse_connective eq "tarhyapi") { $rel = "vyabhicāraḥ";}
+elsif ($discourse_connective eq "अथ") { $rel = "अनन्तरकालः";}
+elsif ($discourse_connective eq "atha") { $rel = "anantarakālaḥ";}
 elsif ($discourse_connective eq "अथापि") { $rel = "व्यभिचारः";}
 elsif ($discourse_connective eq "athāpi") { $rel = "vyabhicāraḥ";}
 elsif ($discourse_connective eq "तथापि") { $rel = "व्यभिचारः";}

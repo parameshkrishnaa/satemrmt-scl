@@ -94,10 +94,7 @@ sub get_cat{
           } elsif($wrd_ana =~ /<vargaH:avy/) {
               $cat="avy";
               $sent = "(avy ";
-          #} elsif($wrd_ana =~ /<XAwuH:/) {
-          #    $cat="wif";
-          #    $sent = "(wif ";
-          } elsif($wrd_ana =~ /<gaNaH:/) {
+          } elsif($wrd_ana =~ /<XAwuH:/) {
               $cat="wif";
               $sent = "(wif ";
           } else {

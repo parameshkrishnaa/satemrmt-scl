@@ -15,7 +15,6 @@ value upAXi_list = [
 "niRAxa";
 "nqpa";
 "paNdiwa";
-"praBu";
 "qRi";
 "rAjan";
 "rAkRasI";
@@ -31,7 +30,7 @@ value upAXi_list = [
 "vikrewrI";
 "xUwa";
 "xevI";
-"zxeva";  (* xevI ahilyA is possible, but for xeva XXX I need examples *)
+"xeva";
 "xayiwa"
 ]
 ;

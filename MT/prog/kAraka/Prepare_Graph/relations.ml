@@ -20,9 +20,9 @@ value relations_encodings = [
 	("karaNam",18);
 	("sampraxAnam",19);
 	("apAxAnam",20);
-	("viRayAXikaraNam",21);
-	("xeSAXikaraNam",22);
-	("kAlAXikaraNam",23);
+	("xeSAXikaraNam",21);
+	("kAlAXikaraNam",22);
+	("viRayAXikaraNam",23);
 	("aXikaraNam",24);
 	("pUrvakAlaH",25);
 (* earlier it was pUrvakAla = 24, and aXikaraNa = 25. But now we want to impose a condition that there can be only one adhikarana, hence the order changed *)
@@ -42,7 +42,7 @@ value relations_encodings = [
 	("hewuH5",70);
 	("prayojanam1",40);
 	("prayojanam",41);
-	("varwamAnasamAnakAlaH",42);
+	("prayojanam_xyowakaH",42);
 	("sanxarBa_binxuH",43);
 	("wulanA_binxuH",44);
 	("samuccaya_xyowakaH",45);
@@ -63,9 +63,8 @@ value relations_encodings = [
 	("kArya_kAraNa_BAvaH",60);
 	("viroXakaH",68);
 	("viroXa_xyowakaH",69);
-	("samAsaH",71);
 	("samAnakAlaH",74);
-	("prayojanam_xyowakaH",75);
+	("varwamAnasamAnakAlaH",75);
 	("sahArWa_xyowakaH",76);
 	("vinArWa_xyowakaH",77);
 	("lyapkarmAXikaraNam",78);
@@ -115,6 +114,7 @@ value relations_encodings = [
 	("AvaSyakawA_pariNAma_sambanXaH",209);
 	("samAnAXikaraNam",1009);
 	("upamAnam_rahiwa_upamAna_xyowakaH",1080);
+	("RaRTIsambanXaH_samAsa",5006);
         ]
 ;
 

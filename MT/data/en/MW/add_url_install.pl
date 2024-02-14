@@ -1,6 +1,5 @@
 #!/usr/bin/perl
 #
-# Heritage_cgi extension is assumed to be .cgi
 
 require "../../../../paths.pl";
 while($in = <STDIN>){

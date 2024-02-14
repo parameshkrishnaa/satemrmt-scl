@@ -1,4 +1,5 @@
 value akarmaka_XAwu_list = [
+"Af_viS1";
 "Af_yA1";
 "As1";
 "BA1";

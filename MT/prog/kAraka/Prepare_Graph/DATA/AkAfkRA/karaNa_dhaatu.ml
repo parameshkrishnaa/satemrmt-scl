@@ -26,6 +26,7 @@ value karaNa_XAwu_list = [
 "ava_gam1";
 "ava_i1";
 "aXi_gam1";
+"ax2";
 "Baj1";
 "banX1";
 "baX1";
@@ -159,7 +160,6 @@ value karaNa_XAwu_list = [
 "vi_car1";
 "vi_gam1";
 "vi_ji1";
-"vi_hq1";
 "vi_mqS1";
 "vi_muc1";
 "vi_ni_yam2";
@@ -191,7 +191,7 @@ value karaNa_XAwu_list = [
 "yaj1";
 "yaw1";
 "yuj1";
-"zyuj2";
+"yuj2";
 "yuX1"
 ]
 ;

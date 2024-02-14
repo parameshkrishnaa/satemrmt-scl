@@ -12,7 +12,6 @@ value xeSAXikaraNa_list = [
 "zxUram";
 "zxUre";
 "zxUreNa";
-"mayi";
 "aXaH";
 "agre";
 "amuwra";
@@ -32,6 +31,5 @@ value xeSAXikaraNa_list = [
 "viprakqRTam";
 "wawra";
 "yawra";
-"wvayi";
 ]
 ;

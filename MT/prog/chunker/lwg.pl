@@ -50,7 +50,6 @@ License: GPL
 
 $/ = "\n\n";
 
-$last[0] = ""; # It was marked as NULL, which should not be. Look at the condition in AAA below.
 $morph_kaaraka_anal = 10; #counting starts from 0
 while($in = <STDIN>){
 
@@ -58,8 +57,8 @@ while($in = <STDIN>){
   
     $i = 0;
     while($i < $#in) {
-       chomp($in[$i]);
        @f = split(/\t/,$in[$i]);
+<<<<<<< HEAD
         #$last[$i] = $f[$morph_kaaraka_anal];
        if ($last[$i] eq "") {     # This is to ensure that the last[$i+1] defined below does not get overwritten.
           print $last[$i],"\n";
@@ -72,6 +71,8 @@ while($in = <STDIN>){
        if(($f[$morph_kaaraka_anal] =~ /<lakAraH:lat>/) &&
           ($s[$morph_kaaraka_anal] =~ /<word:sma><rt:sma><vargaH:avy><level:1>/)) {
            if ($s[$morph_kaaraka_anal] =~ /<rel_nm:([^>]+)><relata_pos:([^>]+)>/){
+               $rel_nm = $1;
+               $relata_pos = $2;
                $last[$i] =~ s/<lakAraH:lat>/<lakAraH:lat_sma>/;
                $last[$i+1] = "-";
            }
@@ -80,22 +81,22 @@ while($in = <STDIN>){
           ($s[$morph_kaaraka_anal] =~ /<rt:as[123]>.*<lakAraH:(l[auiq][tf]|ASIrlif)>/)) {
           $f[$morph_kaaraka_anal] =~ s/<kqw_prawyayaH:Sawq_lat>/<kqw_prawyayaH:Sawq_lat_$1>/;
            if($s[$morph_kaaraka_anal] =~ /<rel_nm:([^>]+)><relata_pos:([^>]+)>/){
+              $rel_nm = $1;
+              $relata_pos = $2;
               $last[$i+1] = "-";
            }
        }
 # All the relatas that were pointing towards `sma', now point them towards the previous verbal form.
-# I do not think there would be any words that get related to sma. Hence the following is commented.
-#       if($last[$i+1] eq "-") {
-#         $j=0;
-#         $pos1 = $i+1; #Pos is counted from 1
-#         $pos = $i+1+1;
-#         while($j <= $#in) {
-#           $in[$j] =~ s/<relata_pos:$pos>/<relata_pos:$pos1>/;
-#           $j++;
-#        }
-#         $in[$i] =~ s/<rel_nm:[^>]+><relata_pos:[^>]+>/<rel_nm:$rel_nm><relata_pos:$relata_pos>/;
-#       }
-
+       if($last[$i+1] eq "-") {
+         $j=0;
+         $pos1 = $i+1; #Pos is counted from 1
+         $pos = $i+1+1;
+         while($j <= $#in) {
+           $in[$j] =~ s/<relata_pos:$pos>/<relata_pos:$pos1>/;
+           $j++;
+        }
+         $in[$i] =~ s/<rel_nm:[^>]+><relata_pos:[^>]+>/<rel_nm:$rel_nm><relata_pos:$relata_pos>/;
+       }
        $i++;
     }
 

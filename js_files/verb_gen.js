@@ -93,7 +93,7 @@ function mycallkrwgen () {
   }
 
   $.post(
-    "/cgi-bin/SCL_CGI/skt_gen/kqw/kqw_gen.cgi",
+    "/cgi-bin/SCL_CGI/skt_gen/kqw/kqw_gen_web.cgi",
     {
       "vb": $("#XAwu").val(),
       "upasarga": $("#upasargaH").val(),

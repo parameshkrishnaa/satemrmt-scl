@@ -1,21 +1,17 @@
 value manuRyasaFjFAvAci = [
 "awri";
-"arjuna";
 "BArawa";
 "Barawa";
 "SabarI";
 "SakuntalA";
 "SawqGna";
 "balarAma";
-"guha";
 "lakRmaNa";
 "kEkayI";
 "kOnweya";
 "maXusUxana";
 "nala";
 "nAraxa";
-"pArWa";
-"praBu";
 "rAGava";
 "rAma";
 "sIwA";
@@ -25,9 +21,7 @@ value manuRyasaFjFAvAci = [
 "vAlmIki";
 "wArA";
 "xuryoXana";
-"XanaFjaya";
 "xaSaraWa";
-"yogeSvara";
 "yuXiRTira";
 ]
 ;

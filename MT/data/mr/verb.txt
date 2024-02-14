@@ -2021,6 +2021,7 @@ krax1,ap,ak,v,GAbara^xuHKI_ho,vEkalye
 kRE1,pp,ak,v,naRta_ho^hrAsa_ho^kamI_ho^mlAna_ho,kRaye
 kRev1,pp,sk,v,WuMka,nirasane
 krI1,ap,sk,v,KarexI_kara^mobaxalA_Ge,xravyavinimaye
+krI1,pp,sk,v,KarexI_kara^mobaxalA_Ge,xravyavinimaye
 kRi1,pp,ak,v,kRINa_ho,kRaye
 krI1,pp,sk,v,KarexI_kara^mobaxalA_Ge,xravyavinimaye
 kRI1,pp,sk,v,xuHKa_xe^hiMsA_kara^pIdA_xe,hiMsAyAm
@@ -2167,7 +2168,7 @@ lifg1,pp,sk,v,jA,gawyarWaH
 lifg2,pp,sk,v,viviXa_raMgAnI_raMgAva,ciwrIkaraNe
 lih1,ap,sk,v,cAta^carava,AsvAxane
 lih1,pp,sk,v,cAta^carava,AsvAxane
-liK1,pp,sk,v,lihi,akRaravinyAse
+liK1,pp,sk,v,lihI,akRaravinyAse
 lip1,ap,sk,v,liMpa^mAKa^lepa_xe^vyApa^xURiwa_kara,upaxehe
 lip1,pp,sk,v,liMpa^mAKa^lepa_xe^vyApa^xURiwa_kara,upaxehe
 liS1,ap,ak,v,kamI_kara,alpIBAve
@@ -2387,7 +2388,8 @@ narx1,pp,ak,v,AvAja_kara,Sabxe
 naS1,pp,sk,v,naRta_ho^nASa_pAva^axqSya_ho^palYUna_jA,axarSane
 nAs1,pp,sk,v,AvAja_kara,Sabxe
 nas1,pp,sk,v,vAkade_ho^nama,kOtilye
-NaS1,pp,ak,v,naRta_ho,NW
+NaS1,pp,ak,v,nASa_ho,NW
+NaS1,pp,sk,v,nASa_kara,NW
 nat1,pp,sk,v,nAca^nqwya_kara,nqwwO
 nat2,pp,sk,v,nAca^nqwya_kara,nqwwO_gawO_{iwyanye}
 nat3,pp,sk,v,xAKava,avasyanxane

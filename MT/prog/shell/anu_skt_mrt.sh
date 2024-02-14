@@ -134,13 +134,13 @@ wsd () {
 
 mar_gen(){
     $ANU_MT_PATH/interface/add_colorcode.pl < $temp_files_path/$fbn.out |\
-    $ANU_MT_PATH/chunker/lwg.pl |\
+    $ANU_MT_PATH/chunker/lwg.pl > /tmp/12.txt
     #$ANU_MT_PATH/map/add_dict_mng.pl $SCLINSTALLDIR $ANU_MT_PATH/../data mr |\
-    $ANU_MT_PATH/map/mar/add_dict_mng.pl $SCLINSTALLDIR $ANU_MT_PATH/../data mr |\
-    $ANU_MT_PATH/map/mar/lwg_avy_avy.pl $SCLINSTALLDIR $ANU_MT_PATH/../data mr  |\
-    $ANU_MT_PATH/mar/sent_gen/agreement.pl $ANU_MT_PATH/../data $ANU_MT_PATH/mar/sent_gen  |\
-    $ANU_MT_PATH/mar/word_gen/call_gen.pl $SCLINSTALLDIR  |\
-    $ANU_MT_PATH/interface/modify_mo_for_display.pl $SCLINSTALLDIR  > $temp_files_path/ttt
+    $ANU_MT_PATH/map/mar/add_dict_mng.pl $SCLINSTALLDIR $ANU_MT_PATH/../data mr < /tmp/12.txt > /tmp/34.txt 
+    $ANU_MT_PATH/map/mar/lwg_avy_avy.pl $SCLINSTALLDIR $ANU_MT_PATH/../data mr  < /tmp/34.txt  |\
+    $ANU_MT_PATH/mar/sent_gen/agreement.pl $ANU_MT_PATH/../data $ANU_MT_PATH/mar/sent_gen > /tmp/56.txt 
+    $ANU_MT_PATH/mar/word_gen/call_gen.pl $SCLINSTALLDIR  < /tmp/56.txt > /tmp/78.txt 
+    $ANU_MT_PATH/interface/modify_mo_for_display.pl $SCLINSTALLDIR  < /tmp/78.txt > $temp_files_path/ttt
     cp $temp_files_path/ttt $temp_files_path/$fbn.out
 }
 ##########
@@ -183,7 +183,7 @@ mar_gen(){
 
 #Generate Shloka order anusaaraka output
  shloka_anu_op () {
-  $ANU_MT_PATH/interface/get_anvaya_order_html.pl $fbn $temp_files_path $OUTSCRIPT  cgi-bin $HERITAGE_CGI S $SENT_NO $SCL_CGI < $temp_files_path/anvaya_outscript.tsv > $temp_files_path/../shloka_$fbn.html
+  $ANU_MT_PATH/interface/get_anvaya_order_html.pl $fbn $temp_files_path $OUTSCRIPT cgi-bin $HERITAGE_CGI S $SENT_NO $SCL_CGI < $temp_files_path/anvaya_outscript.tsv > $temp_files_path/../shloka_$fbn.html
  }
 
 ################

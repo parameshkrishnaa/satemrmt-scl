@@ -51,7 +51,8 @@ while($in = <STDIN>){
  @f = split(/\t/,$in);
 
  if($in) {
-   my $out = &call_gen($f[15],"ON","NOT");
+   print "f 14 = $f[14],\n";
+   my $out = &call_gen($f[14],"ON","NOT");
    print $out;
  } 
  print "\n";
@@ -63,12 +64,22 @@ my($in,$show,$not) = @_;
 my($out);
       $in =~ s/\/$//;
       ($rt,$cat,$gen,$num,$per,$tam) = split(/ /,$in);
+      print "parameters = $rt $cat $gen $num $per $tam\n";
       if($rt =~ /^(.*-)([^\-]+)$/) { $pUrva = $1; $rt = $2;} else {$pUrva = "";}
-      ($rt,$tam) = split(/:/,&handle_hE($rt,$tam));
-      ($rt,$cat) = split(/:/,&handle_Bavaw($rt,$cat));
-      ($rt,$tam) = split(/:/,&handle_apanA($rt,$tam));
+      #($rt,$tam) = split(/:/,&handle_hE($rt,$tam));
+      #($rt,$cat) = split(/:/,&handle_Bavaw($rt,$cat));
+      #($rt,$tam) = split(/:/,&handle_apanA($rt,$tam));
       if($rt =~ /\-/) {$rt =~ s/\-/__/g;}
-      $out = `$SCLINSTALLDIR/MT/prog/hn/word_gen/test/new_gen.out $show $not $rt $cat $gen $num $per $tam`;
+      #$out = `$SCLINSTALLDIR/MT/prog/hn/word_gen/test/new_gen.out $show $not $rt $cat $gen $num $per $tam`;
+      if($cat eq "v") {
+      $tam =~ s/tam://;
+      $str = "$rt<pos:$cat><tam:$tam><gender:$gen><number:$num><person:per>";
+      }
+      $ans = "echo '$str' | lt-proc - cg /home/satemrmt-scl/MT/prog/mar/word_gen/mar_ana.bin";
+      open (TMP,">>/tmp/aa");
+      print TMP $ans;
+      close(TMP);
+      $out = `$ans`;
       $out =~ s/__/-/g;
       $out = $pUrva.$out;
 $out;
